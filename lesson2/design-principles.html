@@ -7,21 +7,28 @@
     <meta name="description" content="Design principles document which talks about the elements of design for a web page.">
     <title>Design Principles</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/css/small.css" media="screen" @media screen and (max-width: 460px)>
+    <link rel="stylesheet" href="/css/medium.css" media="screen" @media screen and (max-width: 720px)>
 </head>
 <body>
     <div class="maincontent">
         <header>
-
+            <h1 class="title-header">Josh Breiter | CIT 230 Assignment Portal</h1>        
         </header>
         <nav>
-
+            <ul>
+                <li><a href="/">Home</a></li>
+            </ul>
         </nav>
         <main>
-
+            <section>
+                <h2 class="subheader">Design Principles</h2>
+                <p></p>
+            </section>
         </main>
         <footer>
-            
+                &copy; <span id="copyright-year"></span> Josh Breiter | <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5">MDN HTML5 Docs</a> | Last updated: <span id="lastupdated"></span>
         </footer>
     </div>
 </body>
