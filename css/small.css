@@ -10,5 +10,10 @@
     .profile-pic {
         float: none;
     }
+    
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
 
+    
 }

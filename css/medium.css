@@ -1,0 +1,21 @@
+@media screen and (max-width: 720px) {
+    header {
+        font-size: 3vw;
+    }
+
+    .main-container {
+        min-width: 460px;
+    }
+    
+    .content-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .img-left {
+
+    }
+
+    .img-right {
+        
+    }
+}

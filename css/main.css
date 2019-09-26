@@ -9,6 +9,7 @@
 body {
     background-color: #3a606e;
     font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -68,5 +69,18 @@ nav ul li:before {
     margin: 1em 2em 1em 2em;
     border-radius: 1em;
     border-style: solid;
+
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.img-left {
+    
+}
+
+.img-right {
 
 }
