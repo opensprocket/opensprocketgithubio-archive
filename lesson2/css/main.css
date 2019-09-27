@@ -77,13 +77,14 @@ nav ul li:before {
 
 }
 
-/*grid*/
-.grid {
+/*grid styling*/
+main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    
 }
 
 /*images*/
 .med-img {
-    width: 360px;  
+    max-width: 100%;  
 }

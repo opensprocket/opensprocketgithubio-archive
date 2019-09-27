@@ -10,10 +10,9 @@
     .profile-pic {
         float: none;
     }
-
-/* grid */
-    .grid {
-        grid-template-columns: 1fr;
+    /*grid layout*/
+    main {
+        
     }
 
 /*images*/
