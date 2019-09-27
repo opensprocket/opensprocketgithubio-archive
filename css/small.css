@@ -11,11 +11,6 @@
         float: none;
     }
 
-/* grid */
-    .grid {
-        grid-template-columns: 1fr;
-    }
-
 /*images*/
     .med-img {
         width: 360px;
