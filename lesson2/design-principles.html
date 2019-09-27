@@ -7,12 +7,13 @@
     <meta name="description" content="Design principles document which talks about the elements of design for a web page.">
     <title>Design Principles</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/small.css" media="screen" @media screen and (max-width: 460px)>
     <link rel="stylesheet" href="/css/medium.css" media="screen" @media screen and (max-width: 720px)>
+    <script src="/js/on-page-load.js" async></script>
 </head>
 <body>
-    <div class="maincontent">
+    <div class="main-container">
         <header>
             <h1 class="title-header">Josh Breiter | CIT 230 Assignment Portal</h1>        
         </header>
@@ -21,11 +22,28 @@
                 <li><a href="/">Home</a></li>
             </ul>
         </nav>
-        <main>
-            <section>
-                <h2 class="subheader">Design Principles</h2>
-                <p></p>
-            </section>
+        <main class="content-grid">
+            <h2 class="subheader full-width">Design Principles</h2>
+            <p class="full-width">There are many principles of design to consider when building a webpage. On this page, I would like to give a short overview of three elements of design. While this isn't enough to cover every single aspect of webpage design, it will illustrate the importance of good design.</p>
+            
+            <ul class="full-width">
+                <li><a href="#whitespace">Whitespace</a></li>
+                <li><a href="#contrast">Contrast</a></li>
+                <li><a href="#fittslaw">Fitt's Law</a></li>
+            </ul>
+
+            <h2 class="subheader full-width" id="whitespace">Whitespace and Clean Design</h2>
+            <img src="/lesson2/images/progressive-punctuation.jpg" alt="A screenshot of punctuation we ought to be using" class="med-img">
+            <p></p>
+            
+            <h2 class="subheader full-width" id="contrast">Contrast</h2>
+            <img src="/lesson2/images/baesman.jpg" alt="A screenshot of Baesman consulting's website, blue square with green square with inlaid text" class="med-img">
+            <p></p>
+            <p></p>
+
+            <h2 class="subheader full-width" id="fittslaw">Fitt's Law</h2>
+            <img src="/lesson2/images/apple.jpg" alt="A screenshot of Apple's website showing an iPad" class="med-img">
+            <p></p>
         </main>
         <footer>
                 &copy; <span id="copyright-year"></span> Josh Breiter | <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5">MDN HTML5 Docs</a> | Last updated: <span id="lastupdated"></span>

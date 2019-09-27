@@ -1,6 +1,9 @@
 /*font import*/
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab|Ubuntu&display=swap');
 
+/*import normalize.css*/
+@import "/css/normalize.css";
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,7 +12,7 @@
 body {
     background-color: #3a606e;
     font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
-
+    font-size: 18px;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -53,7 +56,7 @@ nav ul li:before {
 }
 
 .subheader {
-    font-size: 1.3em;
+    font-size: 1.3em;   
 }
 
 .main-container {
@@ -77,10 +80,17 @@ nav ul li:before {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+.full-width {
+    grid-column: 1/-1;
+}
 .img-left {
-    
+    grid
 }
 
 .img-right {
 
+}
+
+.med-img {
+    width: 50%  
 }

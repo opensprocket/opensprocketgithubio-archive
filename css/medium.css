@@ -3,6 +3,10 @@
         font-size: 3vw;
     }
 
+    .title-header {
+        font-size: 1.5em;
+    }
+
     .main-container {
         min-width: 460px;
     }
@@ -16,6 +20,10 @@
     }
 
     .img-right {
+
+    }
+
+    .med-img {
         
     }
 }
