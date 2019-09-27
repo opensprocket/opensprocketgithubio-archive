@@ -4,6 +4,7 @@
 /*import normalize.css*/
 @import "/css/normalize.css";
 
+/*general styling*/
 * {
     box-sizing: border-box;
     margin: 0;
@@ -44,6 +45,7 @@ nav ul li:before {
     content: "\00BB \0020";
 }
 
+/*visual elements*/
 .title-header {
     font-size: 1.8em;
     padding: 1em;
@@ -75,22 +77,13 @@ nav ul li:before {
 
 }
 
-.content-grid {
+/*grid*/
+.grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-.full-width {
-    grid-column: 1/-1;
-}
-.img-left {
-    grid
-}
-
-.img-right {
-
-}
-
+/*images*/
 .med-img {
-    width: 50%  
+    width: 360px;  
 }

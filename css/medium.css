@@ -11,19 +11,13 @@
         min-width: 460px;
     }
     
-    .content-grid {
+/*grid*/
+    .grid {
         grid-template-columns: 1fr 1fr;
     }
 
-    .img-left {
-
-    }
-
-    .img-right {
-
-    }
-
+/*images*/
     .med-img {
-        
+        width: 360px;
     }
 }

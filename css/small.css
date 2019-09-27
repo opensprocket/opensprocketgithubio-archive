@@ -10,12 +10,16 @@
     .profile-pic {
         float: none;
     }
-    
-    .content-grid {
+
+/* grid */
+    .grid {
         grid-template-columns: 1fr;
     }
 
+/*images*/
     .med-img {
-        width: auto;
+        width: 360px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
