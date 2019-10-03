@@ -77,3 +77,8 @@ nav ul li:before {
     margin-left: auto;
     margin-right: auto;
 }
+
+.logo {
+    width: 80%;
+    padding: 10px;
+}
