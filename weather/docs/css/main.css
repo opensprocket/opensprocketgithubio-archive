@@ -8,23 +8,26 @@
 /* Colors */
 
 :root {
-    --main-bg-color: #3a606e;
-    /* header */
-    --main-header-bg-color: #034078;
-    --header-text-color: white;
-    /* body */
+    /* background */
+    --bg-color: #3a606e;
     --main-bg-color: #e0e0e0;
     --secondary-bg-color: white;
+    /* heading */
+    --main-header-bg-color: #034078;
+    --header-text-color: white;
+    /* text */
     --body-text-color: black;
-    --link-text-color: #92140c;
+    --body-text-color-light: white;
+    --link-text-color: blue;
     --link-visited-color: purple;
 }
 
 /* Structural */
 body {
-	background-color: #3a606e;
+	background-color: var(--bg-color);
     font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
     font-size: 18px; /* 18px = 1em */
+    color: var(--body-text-color);
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -34,6 +37,7 @@ h1,h2,h3,h4,h5,h6 {
 
 a {
     color: var(--link-text-color);
+    text-decoration: none;
 }
 
 a:visited {
