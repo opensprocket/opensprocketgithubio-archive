@@ -78,7 +78,13 @@ nav ul li:before {
     margin-right: auto;
 }
 
-.logo {
-    width: 80%;
-    padding: 10px;
+.decorated-ul {
+    list-style: none;
+    font-size: 1rem;
+    text-decoration: none;
+    padding-inline-start: 0px;
+}
+
+.decorated-ul li:before {
+    content: "\00BB \0020";
 }
