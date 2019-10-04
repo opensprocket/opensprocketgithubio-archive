@@ -82,7 +82,7 @@ nav ul li:before {
     list-style: none;
     font-size: 1rem;
     text-decoration: none;
-    padding-inline-start: 0px;
+    padding: unset;
 }
 
 .decorated-ul li:before {
