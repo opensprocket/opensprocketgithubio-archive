@@ -4,6 +4,23 @@
 /*import normalize.css*/
 @import "/css/normalize.css";
 
+
+/* Colors */
+
+:root {
+    --main-bg-color: #3a606e;
+    /* header */
+    --main-header-bg-color: #034078;
+    --header-text-color: white;
+    /* body */
+    --main-bg-color: #e0e0e0;
+    --secondary-bg-color: white;
+    --body-text-color: black;
+    --link-text-color: #92140c;
+    --link-visited-color: purple;
+}
+
+/* Structural */
 body {
 	background-color: #3a606e;
     font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
@@ -13,6 +30,14 @@ body {
 h1,h2,h3,h4,h5,h6 {
     font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
     margin: 1em 1em 1em 0em;
+}
+
+a {
+    color: var(--link-text-color);
+}
+
+a:visited {
+    color: var(--link-visited-color);
 }
 
 footer {
@@ -61,7 +86,7 @@ nav ul li:before {
     margin: 1.3em auto 1.3em auto;
     padding: 1.2em;
     border-radius: 1em;
-    background-color: #e0e0e0;
+    background-color: var(--main-bg-color)
 }
 
 .subheader {
