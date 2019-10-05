@@ -14,16 +14,11 @@ body {
 
 h1,h2,h3,h4,h5,h6 {
     font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
-    margin: 1em 1em .3em 0em;
 }
 
 a {
     color: blue;
     text-decoration: none;
-}
-
-a:visited {
-    color: purple;
 }
 
 footer {
@@ -52,13 +47,24 @@ main section {
 	background-color: white;
 }
 
-nav ul {
+nav ul { 
     list-style: none;
     font-size: 1rem;
+    overflow: hidden;
+    padding: 0;
 }
 
-nav ul li:before {
-    content: "\00BB \0020";
+nav ul a {
+    display: block;
+    text-align: center;
+    padding: .5rem;
+    font-size: .95rem;
+}
+
+nav a:hover {
+    background-color: #454545;
+    color: white;
+    border-radius: 1em;
 }
 
 ul {
@@ -85,7 +91,7 @@ section {
 }
 
 .subheader {
-    font-size: 1.3em;   
+    font-size: 1.3em; 
 }
 
 .title-header {
@@ -96,19 +102,4 @@ section {
     border-radius: 1em;
     margin-left: auto;
     margin-right: auto;
-}
-
-.decorated-ul {
-    list-style: none;
-    font-size: 1rem;
-    text-decoration: none;
-    padding: unset;
-    padding-bottom: 15px;
-}
-
-.decorated-ul li {
-    padding: .3em 0 .3em 0;
-}
-.decorated-ul li:before {
-    content: "\00BB \0020";
 }
