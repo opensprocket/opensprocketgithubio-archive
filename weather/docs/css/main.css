@@ -4,6 +4,9 @@
 /*import normalize.css*/
 @import "/css/normalize.css";
 
+/* import Cloudi fonts */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Patua+One&display=swap');
+
 /* Structural */
 body {
 	background-color: #3a606e;
@@ -103,3 +106,41 @@ section {
     margin-left: auto;
     margin-right: auto;
 }
+
+/* Colors */
+
+.colors {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.colors th {
+    color: white;
+    background-color: #454545;
+    padding: .5em;
+}
+
+.colors td {
+    padding: .5em
+}
+
+.primary {
+    background-color: #001f54;
+    color: white;
+  }
+
+  .secondary {
+    background-color: #034078;
+    color: white;
+  }
+
+  .accent1 {
+    background-color: #1282a2;
+    color: white;
+  }
+
+  .accent2{
+    background-color: #fefcfb;
+    border: 1px solid black;
+  }
