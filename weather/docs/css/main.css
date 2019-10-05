@@ -5,7 +5,7 @@
 @import "/css/normalize.css";
 
 /* import Cloudi fonts */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Patua+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Patua+One&display=swap');
 
 /* Structural */
 body {
@@ -143,4 +143,14 @@ section {
   .accent2{
     background-color: #fefcfb;
     border: 1px solid black;
+  }
+
+  /* Cloudi fonts */
+
+  .cloudi-h {
+      font-family: "Patua One", sans-serif;
+  }
+
+  .cloudi-p {
+    font-family: "IBM Plex Sans", sans-serif;
   }
