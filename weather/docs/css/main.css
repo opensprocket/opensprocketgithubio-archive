@@ -1,6 +1,3 @@
-/*font import*/
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab|Ubuntu&display=swap');
-
 /*import normalize.css*/
 @import "/css/normalize.css";
 
@@ -16,7 +13,7 @@ body {
 }
 
 h1,h2,h3,h4,h5,h6 {
-    font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+    font-family: "IBM Plex Sans", sans-serif;
 }
 
 a {
@@ -107,6 +104,12 @@ section {
     margin-right: auto;
 }
 
+.header-logo {
+    float: right;
+    width: 9vw;
+    margin: 1rem 1rem 1rem auto;
+}
+
 /* Colors */
 
 .colors {
@@ -143,14 +146,4 @@ section {
   .accent2{
     background-color: #fefcfb;
     border: 1px solid black;
-  }
-
-  /* Cloudi fonts */
-
-  .cloudi-h {
-      font-family: "Patua One", sans-serif;
-  }
-
-  .cloudi-p {
-    font-family: "IBM Plex Sans", sans-serif;
   }

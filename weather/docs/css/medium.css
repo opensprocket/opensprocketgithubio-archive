@@ -28,4 +28,9 @@
         padding: 1em;
         border-radius: 1em;
     }
+
+    .header-logo {
+        width: 8vw;
+        margin: .8rem .8rem .8rem auto;
+    }
 }

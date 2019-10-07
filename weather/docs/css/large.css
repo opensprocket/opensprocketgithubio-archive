@@ -14,4 +14,8 @@
         font-size: 1.8rem;
     }
 
+    .header-logo {
+        width: 100px;
+        margin: 0 1rem 0 0;
+    }
 }
