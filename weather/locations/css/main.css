@@ -62,7 +62,7 @@ nav button {
   background: #06090F;
   border: none;
   width: 100%;
-  padding: .5em 0 .5em 0;
+  padding: 2em 0 2em 0;
 }
 
 nav ul {
@@ -110,12 +110,12 @@ main {
 /* footer */
 footer {
   background-color: #06090F;
-  padding: .5em 0 .5em 0;
+  padding: 1em 0 1em 0;
   text-align: center;
   width: 100%;
   position: absolute;
-  bottom: 2em;
-  z-index: -3;
+  bottom: 4em;
+  z-index: -1;
 }
 
 a {
