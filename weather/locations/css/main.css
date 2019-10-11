@@ -9,16 +9,16 @@ body {
   background-color: #111827;
   color: white;
   font-size: 16px; /* 1 EM = 16px */
+  font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
 }
 
 h1,h2,h3,h4,h5,h6 {
   font-family: "Patua One", sans-serif;
 }
 
-
 header {
   overflow: hidden;
-  background-color: #111827;
+  background-color: #253A67;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,16 +41,38 @@ header>section>span {
   font-style: italic;
 }
 
+.wrapper {
+  min-height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Navigation */
+
 nav {
-  
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  position: absolute;
+  bottom: 0;
+}
+
+nav button {
+  color: white;
+  background: #06090F;
+  border: none;
+  width: 100%;
+  padding: .5em 0 .5em 0;
 }
 
 nav ul {
   list-style: none;
-  display: flex;
-  flex-flow: column;
   margin: 0;
   padding: 0;
+}
+
+nav ul li {
+  background-color: #111827;
 }
 
 nav ul a {
@@ -60,6 +82,7 @@ nav ul a {
   padding: .5rem;
 }
 
+/* nav pseudoclasses */
 nav ul a:hover {
   background-color: #253A67;
 }
@@ -68,12 +91,31 @@ nav ul a:active {
   background-color: #2C4E99;
 }
 
+
+
+/* menu toggle */
+.navigation li {
+  display: none;
+}
+
+.responsive li {
+  display: block;
+}
+
+/* main */
 main {
 
 }
 
+/* footer */
 footer {
-
+  background-color: #06090F;
+  padding: .5em 0 .5em 0;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 2em;
+  z-index: -3;
 }
 
 a {
@@ -82,10 +124,6 @@ a {
 
 p {
   
-}
-
-.wrapper {
-  min-width: 350px;
 }
 
 /* Colors */

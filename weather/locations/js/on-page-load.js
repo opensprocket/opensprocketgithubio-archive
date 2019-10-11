@@ -1,6 +1,3 @@
-//input: page load
-//operation: get date, parse and save date. get last modified, save
-//output: display after page load
 function onPageLoad() {
     //update copyright date
     var todaysDate = new Date();
@@ -11,3 +8,8 @@ function onPageLoad() {
 }
 //calls funciton after page has loaded
 window.onload = onPageLoad();
+
+//toggles the mobile hamburger menu open and closed
+function toggleMenu() {
+    document.getElementsByClassName("navigation")[0].classList.toggle("responsive");
+}

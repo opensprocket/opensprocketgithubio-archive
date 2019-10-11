@@ -1,3 +1,15 @@
 @media only screen and (min-width: 476px) {
-    
+
+    nav {
+        flex-flow: row;
+        display: unset;
+        position: unset;
+        bottom: unset;
+    }
+
+    nav button {
+        display: none;
+    }
+
+
 }
