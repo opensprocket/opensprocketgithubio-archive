@@ -7,7 +7,7 @@ function onPageLoad() {
     var currentYear = todaysDate.getFullYear();
     document.getElementById('copyright-year').innerHTML = currentYear;
     //get document.lastmodified
-    document.getElementById('lastupdated').innerHTML = "This document was last updated: " + document.lastModified;
+    document.getElementById('lastupdated').innerHTML = "Last updated: " + document.lastModified;
 }
 //calls funciton after page has loaded
 window.onload = onPageLoad();
