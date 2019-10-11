@@ -1,15 +1,37 @@
 @media only screen and (min-width: 476px) {
+    
+  /* header */
+  header>img {
+    max-width: 5em;
+  }
+  
+  /* navigation */
+  nav {
+    position: relative;
+    bottom: unset;
+    z-index: unset;
+    width: auto;
+    font-size: 14px;
+  }
 
-    nav {
-        flex-flow: row;
-        display: unset;
-        position: unset;
-        bottom: unset;
-    }
+  nav ul {
+    flex-direction: row;
+  }
 
-    nav button {
-        display: none;
-    }
+  .navigation li {
+    display: unset;
+    flex: 1 1 100%;
+  }
 
+  nav button {
+    display: none;
+  }
+  
+  /* footer */
+  footer {
+    bottom: 0;
+    z-index: unset;
+    font-size: 14px;
+  }
 
 }
