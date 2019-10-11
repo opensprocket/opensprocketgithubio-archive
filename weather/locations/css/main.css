@@ -5,6 +5,20 @@
 
 /* Structural */
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 760px;
+  margin: 1.3em auto 1.3em auto;
+  border-radius: 1em;
+  background-color: #e0e0e0;
+} 
+
 body {
   background-color: #111827;
   color: white;
@@ -40,10 +54,6 @@ header>section>h1 {
 header>section>span {
   font-size: .8em;
   font-style: italic;
-}
-
-.wrapper {
-  width: ;  
 }
 
 /* Navigation */
@@ -107,14 +117,21 @@ main {
 }
 
 /* footer */
+@media screen and (max-width: 475) {
+  footer{
+    position: absolute;
+    bottom: 4em;
+    z-index: -1;
+  }
+  
+}
+
 footer {
   background-color: #06090F;
   padding: 1em 0 1.5em 0;
   text-align: center;
   width: 100%;
-  position: absolute;
-  bottom: 4em;
-  z-index: -1;
+  
 }
 
 a {

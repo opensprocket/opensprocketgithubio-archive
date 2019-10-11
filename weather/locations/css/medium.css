@@ -1,5 +1,6 @@
 @media only screen and (min-width: 476px) {
-    
+  /* structure */
+
   /* header */
   header>img {
     max-width: 5em;
@@ -32,6 +33,5 @@
     bottom: 0;
     z-index: unset;
     font-size: 14px;
-  }
-
+  }  
 }
