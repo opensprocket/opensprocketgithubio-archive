@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="/weather/locations/css/main.css" media="screen"> 
     <link rel="stylesheet" href="/weather/locations/css/medium.css" media="screen and (min-width: 476px)">
-    <link rel="stylesheet" href="/weather/locations/css/large.css" media="screen and (min-width: 721px">
+    <link rel="stylesheet" href="/weather/locations/css/large.css" media="screen and (min-width: 721px)">
     <script src="/weather/locations/js/on-page-load.js" async></script>
 </head>
 <body>
@@ -24,26 +24,31 @@
       <nav>
         <button onclick="toggleMenu()">&#9776; Menu</button>
         <ul class="navigation">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Locations</a></li>
-          <li><a href="#">Preston</a></li>
-          <li><a href="#">Storm Center</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#" title="Go to the homepage">Home</a></li>
+          <li><a href="#" class="activenav" title="Go to the Preston page">Preston</a></li>
+          <li><a href="#" title="Go to the Soda Springs page">Soda Springs</a></li>
+          <li><a href="#" title="Go to the Fish Haven page">Fish Haven</a></li>
+          <li><a href="#" title="Go to the Storm Center page">Storm Center</a></li>
+          <li><a href="#" title="Go to the Gallery page">Gallery</a></li>
         </ul>
       </nav>
       <main>
         <section>
-          <h1></h1>
+          
         </section>
         <section>
-          <h2></h2>
+          
         </section>
-        <section></section>
-        <section></section>
+        <section>
+
+        </section>
+        <section>
+
+        </section>
       </main>
       <footer class="navigation">
         <section>
-            &copy; <span id="copyright-year"></span> | <span id="lastupdated"></span>
+            <span id="copyright-year"></span> | <span id="current-date"></span>
         </section>
       </footer>
   </div>

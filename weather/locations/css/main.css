@@ -50,11 +50,13 @@ header>section>span {
 /* Navigation */
 
 nav {
+  background-color: #111827;
   width: 100%;
   display: flex;
   flex-flow: column;
   position: absolute;
   bottom: 0;
+  z-index: 1;
 }
 
 nav button {
@@ -71,15 +73,11 @@ nav ul {
   padding: 0;
 }
 
-nav ul li {
-  background-color: #111827;
-}
-
 nav ul a {
   color: white;
   display: block;
   text-align: center;
-  padding: .5rem;
+  padding: 1rem;
 }
 
 /* nav pseudoclasses */
@@ -88,10 +86,12 @@ nav ul a:hover {
 }
 
 nav ul a:active {
-  background-color: #2C4E99;
+  background-color: #2c4e99;
 }
 
-
+.activenav nav ul a  {
+  background-color: #2C4E99;
+}
 
 /* menu toggle */
 .navigation li {
@@ -110,7 +110,7 @@ main {
 /* footer */
 footer {
   background-color: #06090F;
-  padding: 1em 0 1em 0;
+  padding: 1em 0 1.5em 0;
   text-align: center;
   width: 100%;
   position: absolute;
@@ -120,10 +120,6 @@ footer {
 
 a {
   text-decoration: none;
-}
-
-p {
-  
 }
 
 /* Colors */
