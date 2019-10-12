@@ -21,6 +21,10 @@
   .current-condition {
     grid-column: span 3;
   }
+
+  .forecast {
+    grid-column: span 1;
+  }
   /* footer */
   
 }

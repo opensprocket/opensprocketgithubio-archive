@@ -53,6 +53,9 @@
     grid-column: span 2;
   }
 
+  .forecast {
+    grid-column: span 2;
+  }
   /* footer */
   footer {
     z-index: 0;
