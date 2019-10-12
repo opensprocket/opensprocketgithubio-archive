@@ -1,9 +1,19 @@
 @media only screen and (min-width: 476px) {
   /* structure */
+  .main-container {
+    max-width: 800px;
+  }
 
   /* header */
+  header {
+    margin-bottom: .5em;
+  }
   header>img {
     max-width: 5em;
+    margin: 0 2em 0 0;
+  }
+  header>section>h1 {
+    font-size: 3em;
   }
   
   /* navigation */
@@ -13,6 +23,7 @@
     z-index: unset;
     width: auto;
     font-size: 14px;
+    margin-bottom: .5em
   }
 
   nav ul {
@@ -28,10 +39,25 @@
     display: none;
   }
   
+  /* main */
+
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .location {
+    grid-column: span 2;
+  }
+  
+  .current-condition {
+    grid-column: span 2;
+  }
+
   /* footer */
   footer {
-    bottom: 0;
-    z-index: unset;
+    z-index: 0;
     font-size: 14px;
+    position: relative;
+    bottom: auto;
   }  
 }

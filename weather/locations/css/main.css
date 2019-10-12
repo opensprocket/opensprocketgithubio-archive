@@ -13,10 +13,8 @@
 .main-container {
   display: flex;
   flex-direction: column;
-  max-width: 760px;
-  margin: 1.3em auto 1.3em auto;
-  border-radius: 1em;
-  background-color: #e0e0e0;
+  margin: .8em auto 1.3em auto;
+  min-width: 320px;
 } 
 
 body {
@@ -24,10 +22,12 @@ body {
   color: white;
   font-size: 16px; /* 1 EM = 16px */
   font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+  min-height: 500px;
 }
 
 h1,h2,h3,h4,h5,h6 {
   font-family: "Patua One", sans-serif;
+  margin: 0;
 }
 
 header {
@@ -47,7 +47,6 @@ header>img {
 
 header>section>h1 {
   font-size: 6vw;
-  /* margin: .5vw 0 .5vw 0; */
   margin: 0;
 }
 
@@ -59,7 +58,7 @@ header>section>span {
 /* Navigation */
 
 nav {
-  background-color: #111827;
+  background-color: #06090F;
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -91,7 +90,7 @@ nav ul a {
 
 /* nav pseudoclasses */
 nav ul a:hover {
-  background-color: #253A67;
+  background-color: #111827;
 }
 
 nav ul a:active {
@@ -113,29 +112,46 @@ nav ul a:active {
 
 /* main */
 main {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: .5em;
+  row-gap: .5em;
+}
 
+main section {
+  background-color: #253A67;
+}
+
+.location {
+  background-color: #2c4e99;
+}
+
+.location h1 {
+  margin: .5em .5em 0 .5em;
 }
 
 /* footer */
-@media screen and (max-width: 475) {
-  footer{
-    position: absolute;
-    bottom: 4em;
-    z-index: -1;
-  }
-  
-}
-
 footer {
   background-color: #06090F;
   padding: 1em 0 1.5em 0;
   text-align: center;
   width: 100%;
-  
+}
+
+@media screen and (max-width: 475px) {
+  footer {
+    position: absolute;
+    bottom: 4em;
+    z-index: -1;
+  }
 }
 
 a {
   text-decoration: none;
+}
+
+p {
+  padding: .7em;
 }
 
 /* Colors */
