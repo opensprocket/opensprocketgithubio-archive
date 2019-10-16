@@ -59,10 +59,7 @@
   }
   /* footer */
   footer {
-    z-index: 0;
-    font-size: 14px;
-    position: relative;
-    bottom: auto;
     margin-top: .5em;
+    margin-bottom: auto;
   }  
 }
