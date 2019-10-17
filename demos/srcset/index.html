@@ -4,27 +4,38 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Responsive HTML images demo</title>
-    
+    <link rel="stylesheet" href="/demos/srcset/main.css" media="screen">
   </head>
   <body>
-    <header>
-      
-    </header>
+    <div>
+      <header>
+        <h1>Image srcset demo</h1>
+      </header>
 
-    <main>
-      <section>
-        <h1>Srcset Demo</h1>
+      <main>
+        <section>
+          <h1>Srcset Demo</h1>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget venenatis ligula. Ut lacinia at dolor vitae pulvinar. Aliquam pretium dignissim eros. Integer faucibus, dui non aliquet bibendum, lectus orci lobortis odio, ornare porttitor est tellus eget velit. Nulla eros elit, malesuada id neque vel, viverra vehicula neque. Nullam auctor turpis non leo iaculis finibus. Quisque blandit arcu venenatis libero tempor, ac pulvinar ligula dapibus.</p>
-        
-        <img src="https://picsum.photos/id/" alt="image from space provided by NASA" srcset="">
+          <p>Here we have an image that is responsive to the width of the viewport. </p>
+          <p>The breakpoints are at the following minimum viewport widths:</p>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li>All other sizes will get the default image</li>
+          </ul>
+          
+          <img srcset="/demos/srcset/imgs/nasa-300w.jpg 300w, /demos/srcset/imgs/nasa-400w.jpg 400w, /demos/srcset/imgs/nasa-600w.jpg 600w, /demos/srcset/imgs/nasa-800w.jpg 800w" 
+               sizes="(min-width: 320px) 280px, (min-width: 425px) 400px, (min-width: 800px) 600px, (min-width: 801px) 800px"
+               src="/demos/srcset/imgs/nasa-800w.jpg" alt="image from space provided by NASA" class="image-centered">
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A eum voluptas omnis natus iure magnam accusamus eveniet blanditiis alias, provident culpa officia dolorum unde odio ipsum voluptates inventore! Odio, earum!</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A eum voluptas omnis natus iure magnam accusamus eveniet blanditiis alias, provident culpa officia dolorum unde odio ipsum voluptates inventore! Odio, earum!</p>        
+          
+        </section>
+      </main>
+      <footer>
 
-        <!-- <img src="elva-fairy-800w.jpg" alt="Elva dressed as a fairy"
-             srcset="elva-fairy-320w.jpg 320w, lva-fairy-480w.jpg 480w, elva-fairy-800w.jpg 800w"
-             sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, 800px">  -->
-      </section>
-    </main>
+      </footer>
+    </div>
   </body>
 </html>

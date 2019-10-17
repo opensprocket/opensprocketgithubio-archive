@@ -5,14 +5,9 @@ html {
 
 body {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   background-color: white;
-}
-
-header {
-  background: url(/demos/srcset/imgs/header.jpg) no-repeat center;
-  height: 200px;
 }
 
 section {
@@ -24,7 +19,9 @@ p {
 }
 
 img {
-  display: block;
+  width: 90%;
+}
+
+.image-centered {
   margin: 0 auto;
-  max-width: 100%;
 }
