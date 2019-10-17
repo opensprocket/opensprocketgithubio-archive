@@ -22,6 +22,26 @@ header>h1 {
   font-weight: bolder;
   margin: 145px auto auto 10px;
 }
+
+nav {
+  overflow: hidden;
+}
+
+nav>a {
+  color: blue;
+  text-decoration: none;
+  padding: 20px;
+  margin: auto;
+  display: inline-block;
+}
+nav>a:hover {
+  color: #002762;
+}
+
+footer {
+  text-align: center;
+}
+
 section {
   padding: 20px;
 }
