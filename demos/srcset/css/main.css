@@ -1,6 +1,6 @@
 html {
   font-family: sans-serif;
-  background-color: #002762;
+  background-color: #3a606e;
 }
 
 body {
@@ -40,6 +40,8 @@ nav>a:hover {
 
 footer {
   text-align: center;
+  margin: 3em auto 1em auto;
+  padding: .5em;
 }
 
 section {

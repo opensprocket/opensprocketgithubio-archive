@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
@@ -20,9 +19,16 @@
   <main>
     <section>
       <h1>How it Works</h1>
-
-      <p>Here we have an image that is responsive to the width of the viewport. By using the <span class="preformatted lightred">img</span> tag with the <span class=" preformatted lightpurple">srcset</span> and <span class="preformatted lightpurple">sizes</span> attributes, the image below will only download and display the size appropriate to the viewport.</p>
-
+      <p>This page is styled to have up 1000px in width, after which the margins will automatically increase to keep the body centered. This and additional padding for the section helps keep the image under the maximum size available, which is 800px. </p>
+      <p>Below, we have an image that is responsive to the width of the viewport. By using the <span class="preformatted lightred">img</span> tag with the <span class=" preformatted lightpurple">srcset</span> and <span class="preformatted lightpurple">sizes</span> attributes, the image below will only download and display the size appropriate to the viewport.</p>
+      <p>There are breakpoints at the following widths:</p>
+      <ul>
+        <li>320px</li>
+        <li>420px</li>
+        <li>600px</li>
+        <li>800px and up</li>
+      </ul>
+      <br>
       <img src="/demos/srcset/imgs/nasa-800w.jpg" alt="image of the coastline as seen from space "
         class="image-centered" 
         srcset="/demos/srcset/imgs/nasa-300w.jpg 300w,
@@ -33,6 +39,7 @@
         (max-width: 420px) 400px,
         (max-width: 600px) 580px,
         (min-width: 801px) 800px">
+      <!-- If you are viewing this from the browser source/inspect tool, you'll notice how the formatting here doesn't affect the rendering. It's probably a good idea to compress this once you've got all the images straightened out. -->
 
       <p>Open up your browser inspection tool (Ctrl+Shift+I), turn on your mobile emulator and pick a device.</p>
       <p>Then switch to the network tab and reload the page. You should see the image closest to that resolution and pixel density being downloaded.</p>
@@ -40,7 +47,7 @@
     </section>
   </main>
   <footer>
-      &copy; <span id="copyright-year"></span> Josh Breiter | <a href="https://www.twitter.com/opensprocket">MDN HTML5 Docs</a> | Last updated: <span id="lastupdated"></span>
+      &copy; <span id="copyright-year"></span> Josh Breiter | Last updated: <span id="lastupdated"></span>
   </footer>
 
 </body>
