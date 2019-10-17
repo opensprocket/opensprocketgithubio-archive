@@ -20,7 +20,7 @@ header {
 header>h1 {
   color: white;
   font-weight: bolder;
-  margin: 150px auto auto 10px;
+  margin: 145px auto auto 10px;
 }
 section {
   padding: 20px;
@@ -28,6 +28,19 @@ section {
 
 p {
   line-height: 1.5;
+}
+
+.preformatted {
+  font-family: monospace;
+  font-size: 18px;
+}
+
+.lightred {
+  color: palevioletred;
+}
+
+.lightpurple {
+  color: mediumpurple;
 }
 
 .image-centered {

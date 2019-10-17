@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Responsive Images Demo | opensprocket.github.io</title>
+  <meta name="author" content="Josh Breiter">
+  <meta name="description" content="This page is a demo of the image srcset and sizes attributes to create a responsive image for a page. This particular implementation will only load the image that is needed for a given viewport size.">
+  <link rel="stylesheet" type="text/css" href="/demos/srcset/css/main.css">
+  <script src="/js/on-page-load.js" async></script>
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <header>
+    <h1>Image srcset demo</h1>
+  </header>
+  <nav><a href="/">< Back to Main Page</a></nav>
+  <main>
+    <section>
+      <h1>How it Works</h1>
+
+      <p>Here we have an image that is responsive to the width of the viewport. By using the <span class="preformatted lightred">img</span> tag with the <span class=" preformatted lightpurple">srcset</span> and <span class="preformatted lightpurple">sizes</span> attributes, the image below will only download and display the size appropriate to the viewport.</p>
+
+      <img src="/demos/srcset/imgs/nasa-800w.jpg" alt="image of the coastline as seen from space "
+        class="image-centered" 
+        srcset="/demos/srcset/imgs/nasa-300w.jpg 300w,
+        /demos/srcset/imgs/nasa-400w.jpg 400w,  
+        /demos/srcset/imgs/nasa-600w.jpg 600w, 
+        /demos/srcset/imgs/nasa-800w.jpg 800w" 
+        sizes="(max-width: 320px) 280px,
+        (max-width: 420px) 400px,
+        (max-width: 600px) 580px,
+        (min-width: 801px) 800px">
+
+      <p>Open up your browser inspection tool (Ctrl+Shift+I), turn on your mobile emulator and pick a device.</p>
+      <p>Then switch to the network tab and reload the page. You should see the image closest to that resolution and pixel density being downloaded.</p>
+
+    </section>
+  </main>
+  <footer>
+      &copy; <span id="copyright-year"></span> Josh Breiter | <a href="https://www.twitter.com/opensprocket">MDN HTML5 Docs</a> | Last updated: <span id="lastupdated"></span>
+  </footer>
+
+</body>
+
+</html>
