@@ -54,6 +54,18 @@
     grid-column: span 2;
   }
 
+  .wind {
+    grid-column: 2/4;
+    margin: .8em 0;
+  }
+  
+  .gusts {
+    grid-column: 4/6;
+    margin: .8em 0;
+    display: unset;
+  }
+  
+
   .forecast {
     grid-column: span 2;
   }
