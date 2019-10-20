@@ -168,6 +168,17 @@ p {
 .color-primary-4 { color: #06090F } 
 */
 
+/* section styling */
+
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+}
+
+
 /* Special Elements */
 
 /* component container */
@@ -189,10 +200,13 @@ p {
  }
  
 .ball {
-  width: 35px;
-  height: 35px;
+  width: 37px;
+  height: 37px;
   border-radius: 100%;
   background-color: orangered;
+  position: absolute;
+  top: 0px;
+  left: 67px;
 }
 
 /* center of component ring */
