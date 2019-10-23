@@ -266,6 +266,14 @@ p {
   font-size: 36px;
 }
 
+.forecast-c1 {
+  position: absolute;
+  top: 68px;
+  left: 66px;
+  font-size: 36px;
+  text-align: center;
+}
+
 /* component inner component ring */
 .inner1 {position: absolute; top: 13px; left: 114px;}
 .inner2 {position: absolute; top: 38px; left: 136px;}
@@ -281,16 +289,16 @@ p {
 .inner12 {position: absolute; top: 5px; left: 70px; }
 
 /* component outer ring */
-.outer1 {position: absolute; top: -20px; left: 130px;}
+.outer1 {position: absolute; top: -23px; left: 130px;}
 .outer2 {position: absolute; top: 15px; left: 168px;}
 .outer3 {position: absolute; top: 72px; left: 182px;}
-.outer4 {position: absolute; top: 120px; left: 168px;}
-.outer5 {position: absolute; top: 160px; left: 130px;}
-.outer6 {position: absolute; top: 175px; left: 70px;}
-.outer7 {position: absolute; top: 160px; left: 10px;}
-.outer8 {position: absolute; top: 120px; left: -28px;}
-.outer9 {position: absolute; top: 72px; left: -40px;}
-.outer10 {position: absolute; top: 15px; left: -28px;}
-.outer11 {position: absolute; top: -20px; left: 10px;}
-.outer12 {position: absolute; top: -35px; left: 70px;}
+.outer4 {position: absolute; top: 125px; left: 168px;}
+.outer5 {position: absolute; top: 165px; left: 130px;}
+.outer6 {position: absolute; top: 182px; left: 70px;}
+.outer7 {position: absolute; top: 165px; left: 10px;}
+.outer8 {position: absolute; top: 125px; left: -33px;}
+.outer9 {position: absolute; top: 73px; left: -45px;}
+.outer10 {position: absolute; top: 20px; left: -32px;}
+.outer11 {position: absolute; top: -23px; left: 10px;}
+.outer12 {position: absolute; top: -40px; left: 70px;}
 /* end component styling */
