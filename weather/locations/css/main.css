@@ -259,6 +259,13 @@ p {
   font-size: 36px;
 }
 
+.precip-c1 {
+  position: absolute;
+  top: 68px;
+  left: 68px;
+  font-size: 36px;
+}
+
 /* component inner component ring */
 .inner1 {position: absolute; top: 13px; left: 114px;}
 .inner2 {position: absolute; top: 38px; left: 136px;}
