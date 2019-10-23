@@ -23,7 +23,7 @@ function lastModified() {
     document.getElementById("last-modified").innerHTML = "Updated: " + dayName + ", " + modDate.getDate() + " " + monthName + " " + modDate.getFullYear();
 }
 //calls the listed funciton after page has loaded
-window.onload = currentDate();
+// window.onload = currentDate();
 window.onload = copyrightYear();
 window.onload = lastModified();
 
