@@ -1,8 +1,74 @@
+:root {
+  --bg-primary: #111827;
+  --bg-secondary: #253A67;
+  --
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  background-color: var(--bg-primary);
+  font-size: 16px;
+  color: white;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: "Patua One", sans-serif;
+  margin: 0;
+  padding: 40px;
+}
+
+header {
+  background-color: var(--bg-secondary);
+  min-height: 80px;
+  text-align: center;
+}
+
+nav {
+
+}
+
+nav a {
+
+}
+
+nav a:hover {
+
+}
+
+nav a:active {
+
+}
+
+img {
+  width: 100%;
+}
+
 .main-container {
   max-width: 1000px;
   width: 100%;
   margin: 0 auto;
 }
+
+.flex {
+  display: flex;
+  flex-flow: column;
+  flex: 0 1 auto;
+  align-content: center;
+  padding: 3em;
+}
+
+
+
+
+
+
+
+
 
 @media screen and (min-width: 476px) {
 
