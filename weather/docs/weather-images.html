@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="/weather/docs/lazy-loading/css/main.css" media="screen">
     <link rel="shortcut icon" href="/weather/images/favicon.ico" type="image/x-icon">
-    <script src="/weather/locations/js/on-page-load.js" defer></script>
-    <script src=""></script>
+    <script async src="/weather/locations/js/on-page-load.js"></script>
+    <script async src="/weather/docs/lazy-loading/js/lazyload.js"></script>
 </head>
 <body>
   <div class="main-container">  
@@ -27,36 +27,36 @@
       <div class="flex">
         <section class="">
           <picture>
-            <source media="(min-width: 960px)" srcset="/weather/docs/lazy-loading/images/600w/clear-600w.jpg">
-            <img src="/weather/docs/lazy-loading/images/400w/clear-400w.jpg" alt="A picture of clear weather">
+            <source media="(min-width: 600px)" srcset="/weather/docs/lazy-loading/images/600w/clear-600w.jpg">
+            <img data-src="/weather/docs/lazy-loading/images/400w/clear-400w.jpg" src="/weather/docs/lazy-loading/images/placeholders/placeholder.svg" alt="A picture of clear weather">
           </picture>
         </section>
 
         <section>
           <picture>
-            <source media="(min-width: 960px)" srcset="/weather/docs/lazy-loading/images/600w/clouds-600w.jpg">
-            <img src="/weather/docs/lazy-loading/images/400w/clouds-400w.jpg" alt="A picture of cloudy weather">
+            <source media="(min-width: 600px)" srcset="/weather/docs/lazy-loading/images/600w/clouds-600w.jpg">
+            <img data-src="/weather/docs/lazy-loading/images/400w/clouds-400w.jpg" src="/weather/docs/lazy-loading/images/placeholders/placeholder.svg" alt="A picture of cloudy weather">
           </picture>
         </section>
 
         <section>
           <picture>
-            <source media="(min-width: 960px)" srcset="/weather/docs/lazy-loading/images/600w/fog-600w.jpg">
-            <img src="/weather/docs/lazy-loading/images/400w/fog-400w.jpg" alt="A picture of foggy weather">
+            <source media="(min-width: 600px)" srcset="/weather/docs/lazy-loading/images/600w/fog-600w.jpg">
+            <img data-src="/weather/docs/lazy-loading/images/400w/fog-400w.jpg" src="/weather/docs/lazy-loading/images/placeholders/placeholder.svg" alt="A picture of foggy weather">
           </picture>
         </section>
 
         <section>
           <picture>
-            <source media="(min-width: 960px)" srcset="/weather/docs/lazy-loading/images/600w/rain-600w.jpg">
-            <img src="/weather/docs/lazy-loading/images/400w/rain-400w.jpg" alt="A picture of rainy weather">
+            <source media="(min-width: 600px)" srcset="/weather/docs/lazy-loading/images/600w/rain-600w.jpg">
+            <img data-src="/weather/docs/lazy-loading/images/400w/rain-400w.jpg" src="/weather/docs/lazy-loading/images/placeholders/placeholder.svg" alt="A picture of rainy weather">
           </picture>
         </section>
         
         <section>
           <picture>
-            <source media="(min-width: 960px)" srcset="/weather/docs/lazy-loading/images/600w/snow-600w.jpg">
-            <img src="/weather/docs/lazy-loading/images/400w/snow-400w.jpg" alt="A picture of snowy weather">
+            <source media="(min-width: 600px)" srcset="/weather/docs/lazy-loading/images/600w/snow-600w.jpg">
+            <img data-src="/weather/docs/lazy-loading/images/400w/snow-400w.jpg" src="/weather/docs/lazy-loading/images/placeholders/placeholder.svg" alt="A picture of snowy weather">
           </picture>
         </section>
       </div>
