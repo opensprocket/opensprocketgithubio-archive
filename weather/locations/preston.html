@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/weather/locations/css/large.css" media="screen and (min-width: 801px)">
     <link rel="shortcut icon" href="/weather/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
-    <script src="/weather/locations/js/on-page-load.js" async></script>
+    <!-- <script src="/weather/locations/js/on-page-load.js" async></script> -->
 </head>
 <body>
   <div class="main-container">  
@@ -24,7 +24,7 @@
         </section>
       </header>
       <nav>
-        <button onclick="toggleMenu()">&#9776; Menu</button>
+        <button id="menuBtn">&#9776; Menu</button>
         <ul class="navigation">
           <li><a href="#" title="Go to the homepage">Home</a></li>
           <li><a href="#" class="activenav" title="Go to the Preston page">Preston</a></li>
@@ -170,6 +170,7 @@
         </section>
       </footer>
   </div>
+  <script src="/weather/js/functions.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
   <script>
     WebFont.load({google: {families: ['IBM Plex Sans','Patua One']}});
