@@ -28,7 +28,7 @@ let hour = "6";
 timeBall(hour);
 
 // Values for changeSummaryBackground
-let currCond = "sNOw";
+let currCond = "raiN";
 changeSummaryBackground(currCond);
 
 });
@@ -109,7 +109,8 @@ function changeSummaryBackground(currCond){
                   "/600w/clear.jpg", "/600w/clouds.jpg", "/600w/fog.jpg", "/600w/rain.jpg", "/600w/snow.jpg", 
                   "/800w/clear.jpg", "/800w/clouds.jpg", "/800w/fog.jpg", "/800w/rain.jpg", "/800w/snow.jpg",];
   // rest of directory structure
-  const imgDirPrefix = "/weather/locations/images";
+  const imgDirPrefix = "url(/weather/locations/images";
+  const imgDirPostfix = ")"
 
   // update condition index based on weather status
   switch (condition) {
@@ -133,12 +134,15 @@ function changeSummaryBackground(currCond){
       break;
   }
   console.log(`Value of conditionIndex: ${conditionIndex}`);
-
-  let imageURL = imgDirPrefix + imgURLS[conditionIndex];
+  
+  // build image url() CSS variable
+  let imageURL = imgDirPrefix + imgURLS[conditionIndex] + imgDirPostfix;
   console.log(`imageURL is: ${imageURL}`);
 
   // set background image
-
+  let backgroundImg = document.body.style;
+  console.log(`backgroundImg: ${backgroundImg}`);
+  backgroundImg.setProperty("--dynamic-weather-background", `${imageURL}`);
   
 }
 

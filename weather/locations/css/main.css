@@ -1,6 +1,10 @@
 /* CSS Imports */
 /* @import "https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css" */
 
+:root {
+  --dynamic-weather-background: ;
+}
+
 /* Structural */
 * {
   box-sizing: border-box;
@@ -141,6 +145,9 @@ main section h2 {
 
 .current-condition {
   padding: .5em;
+  background-size: cover;
+  background-image: var(--dynamic-weather-background);
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
 }
 
 .current-condition ul {
