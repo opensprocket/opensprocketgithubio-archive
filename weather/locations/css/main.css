@@ -1,9 +1,7 @@
 /* CSS Imports */
-
 /* @import "https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css" */
 
 /* Structural */
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -56,7 +54,6 @@ header>section>span {
 }
 
 /* Navigation */
-
 nav {
   background-color: #06090F;
   width: 100%;
@@ -216,13 +213,11 @@ p {
 */
 
 /* section styling */
-
 .grid {
   display: grid;
 }
 
 /* Special Elements */
-
 /* component container */
 .component-container {
   position: relative;
@@ -246,11 +241,9 @@ p {
   height: 37px;
   border-radius: 100%;
   background-color: orangered;
-  position: absolute;
-  top: 0px;
-  left: 67px;
+  color: transparent;
+  background-position: center;
 }
-
 /* center of component ring */
 .center1 {
   position: absolute;
@@ -275,8 +268,8 @@ p {
 }
 
 /* component inner component ring */
-.inner1 {position: absolute; top: 13px; left: 114px;}
-.inner2 {position: absolute; top: 38px; left: 136px;}
+.inner1 {position: absolute; top: 11px; left: 114px;}
+.inner2 {position: absolute; top: 40px; left: 136px;}
 .inner3 {position: absolute; top: 72px; left: 145px;}
 .inner4 {position: absolute; top: 105px; left: 134px;}
 .inner5 {position: absolute; top: 128px; left: 110px;}
@@ -284,9 +277,9 @@ p {
 .inner7 {position: absolute; top: 128px; left: 44px;}
 .inner8 {position: absolute; top: 105px; left: 20px;}
 .inner9 {position: absolute; top: 72px; left: 12px;}
-.inner10 {position: absolute; top: 38px; left: 11px;}
-.inner11 {position: absolute; top: 13px; left: 34px;}
-.inner12 {position: absolute; top: 5px; left: 70px; }
+.inner10 {position: absolute; top: 40px; left: 11px;}
+.inner11 {position: absolute; top: 11px; left: 34px;}
+.inner12 {position: absolute; top: 0px; left: 70px;}
 
 /* component outer ring */
 .outer1 {position: absolute; top: -23px; left: 130px;}

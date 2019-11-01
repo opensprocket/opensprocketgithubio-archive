@@ -18,15 +18,19 @@ copyrightYear();  // builds and displays copyright year
 const menuButton = document.querySelector("#menuBtn"); // select menu button
 menuButton.addEventListener("click", toggleMobileMenu); // add event listener to menu button and call function on click
 
-// Values for buildWindChill 
+// Values for buildWindChill()
 let temp = 31;
 let speed = 5;
 buildWindChill(speed, temp); // calculate and display feels like temperature
 
+// Values for timeBall()
+let hour = "6";
+timeBall(hour);
+
 });
 
 // Last modified date
-function lastModified() {
+function lastModified(){
   const longDayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]; // full day name array
   const longMonthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; // full month name array
   let lastMod = new Date(document.lastModified); // date prototype
@@ -38,7 +42,7 @@ function lastModified() {
 }
 
 // Copyright date
-function copyrightYear() {
+function copyrightYear(){
   const currYear = new Date(); // new date
   const copyOutput =  "&copy; " + currYear.getFullYear() + " "; // build inner html content
   document.querySelector("#copyright-year").innerHTML = copyOutput; // set inner html content
@@ -46,13 +50,13 @@ function copyrightYear() {
 }
 
 // Mobile menu toggle
-function toggleMobileMenu(event) {
+function toggleMobileMenu(event){
   const navList = document.querySelector(".navigation"); // grab the first element with the class of navigation (ul in the nav section)
   navList.classList.toggle("responsive"); // toggle the class which affects the visibility of the menu
 }
 
 // Calculate the wind chill
-function buildWindChill(speed, temp) {
+function buildWindChill(speed, temp){
   let feelTemp = document.getElementById("wind-chill"); // grab the span used to hold the wc
   let wc = 35.74 + 0.6215 * temp - 35.75 * Math.pow(speed, 0.16) + 0.4275 * temp * Math.pow(speed, 0.16); // quik maffs (for a computer)
   console.log(`The wind chill is: ${wc}`); // log wc to console
@@ -62,6 +66,20 @@ function buildWindChill(speed, temp) {
   feelTemp.innerHTML = wc; // output wc to page
 }
 
+// Time ball indicator
+function timeBall(hour){
+  // find all elements with ball class and remove
+  let x = document.querySelectorAll(".ball"); 
+  for (let item of x){
+    console.log(item);
+    item.classList.remove("ball");
+  }
+  //find all hours that match paramerter and add ball class to them
+  let hr = document.querySelectorAll(".inner" + hour);
+  for (let item of hr){
+    item.classList.add("ball");
+  }
+}
 
 
 // TODO build setCurrTemp
