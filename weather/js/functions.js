@@ -27,6 +27,10 @@ buildWindChill(speed, temp); // calculate and display feels like temperature
 let hour = "6";
 timeBall(hour);
 
+// Values for changeSummaryBackground
+let currCond = "sNOw";
+changeSummaryBackground(currCond);
+
 });
 
 // Last modified date
@@ -79,6 +83,63 @@ function timeBall(hour){
   for (let item of hr){
     item.classList.add("ball");
   }
+}
+
+// Summary background image switching
+function changeSummaryBackground(currCond){
+  console.log(`Value of currCond: ${currCond}`);
+  let condition = (currCond.toLowerCase()).trim(); // standardize input
+  console.log(`Value of condition: ${condition}`);
+  let conditionIndex = 0; // set condition index to 0
+  console.log(`Value of conditionIndex: ${conditionIndex}`);
+  // determine available width
+  let width = window.innerWidth;
+  console.log(`Screen Width: ${width}`);
+
+  // check if screen is tablet or desktop widths and adjust starting point for condition index
+  if (width > 475 && width <= 800) {
+    conditionIndex += 5;
+    console.log(`Updated value of conditionIndex: ${conditionIndex}`);
+  } else if (width > 800) {
+    conditionIndex += 10
+  }
+
+  // store paths to specific width images
+  const imgURLS = ["/400w/clear.jpg", "/400w/clouds.jpg", "/400w/fog.jpg", "/400w/rain.jpg", "/400w/snow.jpg",
+                  "/600w/clear.jpg", "/600w/clouds.jpg", "/600w/fog.jpg", "/600w/rain.jpg", "/600w/snow.jpg", 
+                  "/800w/clear.jpg", "/800w/clouds.jpg", "/800w/fog.jpg", "/800w/rain.jpg", "/800w/snow.jpg",];
+  // rest of directory structure
+  const imgDirPrefix = "/weather/locations/images";
+
+  // update condition index based on weather status
+  switch (condition) {
+    case "clear":
+      conditionIndex += 0;
+      break;
+    case "cloudy":
+      conditionIndex += 1;
+      break;
+    case "fog":
+      conditionIndex += 2;
+      break;
+    case "rain":
+      conditionIndex += 3;
+      break;
+    case "snow":
+      conditionIndex += 4;
+      break;
+    default:
+      console.log("Error: Weather type is invalid.")
+      break;
+  }
+  console.log(`Value of conditionIndex: ${conditionIndex}`);
+
+  let imageURL = imgDirPrefix + imgURLS[conditionIndex];
+  console.log(`imageURL is: ${imageURL}`);
+
+  // set background image
+
+  
 }
 
 
