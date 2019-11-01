@@ -140,10 +140,10 @@ function changeSummaryBackground(currCond){
   console.log(`imageURL is: ${imageURL}`);
 
   // set background image
-  let backgroundImg = document.body.style;
-  console.log(`backgroundImg: ${backgroundImg}`);
-  backgroundImg.setProperty("--dynamic-weather-background", `${imageURL}`);
-  
+  const backgroundImg = document.body.style; // used to access css
+  // console.log(`backgroundImg: ${backgroundImg}`);
+  backgroundImg.setProperty("--dynamic-weather-background", `${imageURL}`); 
+  console.log(`${imageURL} has been set as the background.`);
 }
 
 
