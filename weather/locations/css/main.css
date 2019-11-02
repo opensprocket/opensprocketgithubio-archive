@@ -286,7 +286,7 @@ p {
 .inner9 {position: absolute; top: 72px; left: 12px;}
 .inner10 {position: absolute; top: 40px; left: 11px;}
 .inner11 {position: absolute; top: 11px; left: 34px;}
-.inner12 {position: absolute; top: 0px; left: 70px;}
+.inner12 {position: absolute; top: 3px; left: 70px;}
 
 /* component outer ring */
 .outer1 {position: absolute; top: -23px; left: 130px;}
@@ -301,4 +301,19 @@ p {
 .outer10 {position: absolute; top: 20px; left: -32px;}
 .outer11 {position: absolute; top: -23px; left: 10px;}
 .outer12 {position: absolute; top: -40px; left: 70px;}
+
+/* ball position styling */
+.b1 {position: absolute; top: 10px; left: 101px;}
+.b2 {position: absolute; top: 35px; left: 125px;}
+.b3 {position: absolute; top: 70px; left: 133px;}
+.b4 {position: absolute; top: 101px; left: 123px;}
+.b5 {position: absolute; top: 123px; left: 101px;}
+.b6 {position: absolute; top: 133px; left: 68px;}
+.b7 {position: absolute; top: 123px; left: 32px;}
+.b8 {position: absolute; top: 101px; left: 10px;}
+.b9 {position: absolute; top: 70px; left: 0px;}
+.b10 {position: absolute; top: 35px; left: 8px;}
+.b11 {position: absolute; top: 10px; left: 32px;}
+.b12 {position: absolute; top: 0px; left: 68px;}
+
 /* end component styling */

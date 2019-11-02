@@ -24,7 +24,7 @@ let speed = 5;
 buildWindChill(speed, temp); // calculate and display feels like temperature
 
 // Values for timeBall()
-let hour = "6";
+let hour = "11";
 timeBall(hour);
 
 // Values for changeSummaryBackground
@@ -72,16 +72,11 @@ function buildWindChill(speed, temp){
 
 // Time ball indicator
 function timeBall(hour){
-  // find all elements with ball class and remove
-  let x = document.querySelectorAll(".ball"); 
+  let x = document.querySelectorAll(".ball");
+  let hr = "b" + hour;
+  console.log(`Value of hour: ${hour}`);
   for (let item of x){
-    console.log(item);
-    item.classList.remove("ball");
-  }
-  //find all hours that match paramerter and add ball class to them
-  let hr = document.querySelectorAll(".inner" + hour);
-  for (let item of hr){
-    item.classList.add("ball");
+    item.classList.add(hr)
   }
 }
 
