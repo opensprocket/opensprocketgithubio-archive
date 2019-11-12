@@ -251,6 +251,12 @@ p {
   color: transparent;
   background-position: center;
 }
+
+#forecast img {
+  max-width: 28px;
+  max-height: 28px;
+}
+
 /* center of component ring */
 .center1 {
   position: absolute;
@@ -289,18 +295,18 @@ p {
 .inner12 {position: absolute; top: 3px; left: 70px;}
 
 /* component outer ring */
-.outer1 {position: absolute; top: -23px; left: 130px;}
-.outer2 {position: absolute; top: 15px; left: 168px;}
-.outer3 {position: absolute; top: 72px; left: 182px;}
-.outer4 {position: absolute; top: 125px; left: 168px;}
-.outer5 {position: absolute; top: 165px; left: 130px;}
-.outer6 {position: absolute; top: 182px; left: 70px;}
-.outer7 {position: absolute; top: 165px; left: 10px;}
-.outer8 {position: absolute; top: 125px; left: -33px;}
-.outer9 {position: absolute; top: 73px; left: -45px;}
-.outer10 {position: absolute; top: 20px; left: -32px;}
-.outer11 {position: absolute; top: -23px; left: 10px;}
-.outer12 {position: absolute; top: -40px; left: 70px;}
+.outer1 {position: absolute; top: -23px; left: 130px; min-width: 35px; text-align: center;}
+.outer2 {position: absolute; top: 15px; left: 168px; min-width: 35px; text-align: center;}
+.outer3 {position: absolute; top: 72px; left: 182px; min-width: 35px; text-align: center;}
+.outer4 {position: absolute; top: 125px; left: 168px; min-width: 35px; text-align: center;}
+.outer5 {position: absolute; top: 165px; left: 130px; min-width: 35px; text-align: center;}
+.outer6 {position: absolute; top: 182px; left: 70px; min-width: 35px; }
+.outer7 {position: absolute; top: 165px; left: 10px; min-width: 35px;}
+.outer8 {position: absolute; top: 125px; left: -33px; min-width: 35px;}
+.outer9 {position: absolute; top: 73px; left: -45px; min-width: 35px;}
+.outer10 {position: absolute; top: 20px; left: -32px; min-width: 35px;}
+.outer11 {position: absolute; top: -23px; left: 10px; min-width: 35px;}
+.outer12 {position: absolute; top: -40px; left: 70px; min-width: 35px;}
 
 /* ball position styling */
 .b1 {position: absolute; top: 10px; left: 101px;}
@@ -320,4 +326,15 @@ p {
 /* dynamic hide */
 .hide {
   display: none;
+  visibility: collapse;
+}
+
+#status {
+  margin: 0 auto;
+  background-color: #253A67;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+  min-height: 26em;
 }

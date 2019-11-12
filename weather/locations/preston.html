@@ -5,14 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="Josh Breiter">
     <meta name="description" content="Preston, ID weather page. Located at 42.0963° N, 111.8766° W">
-    <title id="page-title">Preston, ID | Cloudi Weather</title>
+    <title id="page-title"> | Cloudi Weather</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="/weather/locations/css/main.css" media="screen"> 
     <link rel="stylesheet" href="/weather/locations/css/medium.css" media="screen and (min-width: 476px)">
     <link rel="stylesheet" href="/weather/locations/css/large.css" media="screen and (min-width: 801px)">
     <link rel="shortcut icon" href="/weather/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
-    <!-- <script src="/weather/locations/js/on-page-load.js" async></script> -->
 </head>
 <body>
   <div class="main-container">  
@@ -34,10 +33,11 @@
           <li><a href="#" title="Go to the Gallery page">Gallery</a></li>
         </ul>
       </nav>
-      <main id="main-content">
+      <section id="status">Please be patient, fetching latest weather data.</section>
+      <main id="main-content" class="hide">
         <section class="location">
-          <h1>Preston, ID</h1>
-          <p class="gps-coords">GPS: 42.0963° N, 111.8766° W</p>
+          <h1 id="contentHeading"></h1>
+          <p class="gps-coords" id="locCoords">GPS: 42.0963° N, 111.8766° W</p>
         </section>
         <section class="current-condition ">
           <ul class="grid">
@@ -87,8 +87,8 @@
             </div>
             <!-- end component -->
         </section>
-        <section class="precipitation">
-          <h2>Precipitation</h2>
+        <section class="wind-forecast">
+          <h2>Wind</h2>
           <!-- begin component -->
           <div class="component-container">
               <div class="component-circle">
@@ -125,7 +125,7 @@
             </div>
             <!-- end component -->
         </section>
-        <section class="forecast">
+        <section id="forecast" class="forecast">
           <h2>Forecast</h2>
           <!-- begin component -->
           <div class="component-container">
@@ -146,18 +146,18 @@
                 <div class="inner11">11</div>
                 <div class="inner12">12</div>
               <!--  begin outer section  -->
-                <div class="outer1 wi wi-day-cloudy-high"></div>
-                <div class="outer2 wi wi-day-windy"></div>
-                <div class="outer3 wi wi-day-rain"></div>
-                <div class="outer4 wi wi-day-light-wind"></div>
-                <div class="outer5 wi wi-day-sunny"></div>
-                <div class="outer6 wi wi-day-rain-wind"></div>
-                <div class="outer7 wi wi-day-cloudy"></div>
-                <div class="outer8 wi wi-day-cloudy-gusts"></div>
-                <div class="outer9 wi wi-day-sprinkle"></div>
-                <div class="outer10 wi wi-day-sunny-overcast"></div>
-                <div class="outer11 wi wi-hot"></div>
-                <div class="outer12 wi wi-day-rain-mix"></div>
+                <div class="outer1"></div>
+                <div class="outer2"></div>
+                <div class="outer3"></div>
+                <div class="outer4"></div>
+                <div class="outer5"></div>
+                <div class="outer6"></div>
+                <div class="outer7"></div>
+                <div class="outer8"></div>
+                <div class="outer9"></div>
+                <div class="outer10"></div>
+                <div class="outer11"></div>
+                <div class="outer12"></div>
                 <div class="ball"></div>
               </div>
             </div>
