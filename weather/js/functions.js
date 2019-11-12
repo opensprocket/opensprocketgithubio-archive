@@ -35,7 +35,8 @@ menuButton.addEventListener("click", toggleMobileMenu); // add event listener to
 
 // Fetch information from JSON
 let weatherURL = "/weather/js/idahoweather.json";
-fetchWeatherData(weatherURL);
+let cityName = $("#city").getAttribute("data-city");
+fetchWeatherData(weatherURL, cityName);
 
 });
 
@@ -160,8 +161,8 @@ function changeSummaryBackground(currCond){
 }
 
 // Fetch weather data and store in local storage
-function fetchWeatherData(weatherURL){
-  let cityName = "Preston"; // Targeted city
+function fetchWeatherData(weatherURL, cityName){
+  // let cityName = "Preston"; // Targeted city
   fetch(weatherURL)
   .then(function(response){
     if(response.ok){
@@ -172,7 +173,7 @@ function fetchWeatherData(weatherURL){
   .then(function(data){
     console.log(`${data}`); // Verify and display data recieved
     let p = data[cityName]; // uses cityName to ID which object to look into
-
+    console.log(`City Name: ${cityName}`);
     // Get & build location info
     let locName = p.properties.relativeLocation.properties.city;
     let locState = p.properties.relativeLocation.properties.state;
@@ -186,9 +187,9 @@ function fetchWeatherData(weatherURL){
     console.log(`locCoords: ${locCoords}`);
     
     // Store in local storage in a JSON file
-    const prestonData = JSON.stringify({fullName,locCoords});
-    locStor.setItem("fullName", prestonData); // Note: This can be edited by the client!!
-    console.log(`Successfully saved fullName to session storage: ${prestonData}`);
+    const cityData = JSON.stringify({fullName,locCoords});
+    locStor.setItem("fullName", cityData); // Note: This can be edited by the client!!
+    console.log(`Successfully saved fullName to session storage: ${cityData}`);
 
     // Temperature data
     let temp = p.properties.relativeLocation.properties.temperature;
@@ -287,9 +288,9 @@ function buildPage(){
   let feelTemp = $("#wind-chill");
   feelTemp.innerHTML = buildWindChill(sesStor.getItem("windSpeed"), sesStor.getItem("temp"));
   let windSpeed = $(".wind");
-  windSpeed.innerHTML = sesStor.getItem("windSpeed") + "mph";
+  windSpeed.innerHTML = "Wind Speed: " + sesStor.getItem("windSpeed") + "mph";
   let windGust = $(".gusts");
-  windGust.innerHTML = sesStor.getItem("windGust") + "mph";
+  windGust.innerHTML = "Gusts: " + sesStor.getItem("windGust") + "mph";
 
   // Time indicators
   let thisDate = new Date();
