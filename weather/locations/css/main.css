@@ -224,6 +224,10 @@ p {
   display: grid;
 }
 
+.flex {
+  display: flex;
+}
+
 /* Special Elements */
 /* component container */
 .component-container {
@@ -332,7 +336,7 @@ p {
 #status {
   margin: 0 auto;
   background-color: #253A67;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   min-width: 100%;
