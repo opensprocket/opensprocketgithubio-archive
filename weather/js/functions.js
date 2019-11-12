@@ -287,9 +287,9 @@ function buildPage(){
   let feelTemp = $("#wind-chill");
   feelTemp.innerHTML = buildWindChill(sesStor.getItem("windSpeed"), sesStor.getItem("temp"));
   let windSpeed = $(".wind");
-  windSpeed.innerHTML = sesStor.getItem("windSpeed");
+  windSpeed.innerHTML = sesStor.getItem("windSpeed") + "mph";
   let windGust = $(".gusts");
-  windGust.innerHTML = sesStor.getItem("windGust");
+  windGust.innerHTML = sesStor.getItem("windGust") + "mph";
 
   // Time indicators
   let thisDate = new Date();

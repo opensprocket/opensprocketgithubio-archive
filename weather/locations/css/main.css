@@ -265,7 +265,7 @@ p {
   font-size: 36px;
 }
 
-.precip-c1 {
+.wind-forecast-c1 {
   position: absolute;
   top: 68px;
   left: 68px;
@@ -300,13 +300,13 @@ p {
 .outer3 {position: absolute; top: 72px; left: 182px; min-width: 35px; text-align: center;}
 .outer4 {position: absolute; top: 125px; left: 168px; min-width: 35px; text-align: center;}
 .outer5 {position: absolute; top: 165px; left: 130px; min-width: 35px; text-align: center;}
-.outer6 {position: absolute; top: 182px; left: 70px; min-width: 35px; }
-.outer7 {position: absolute; top: 165px; left: 10px; min-width: 35px;}
-.outer8 {position: absolute; top: 125px; left: -33px; min-width: 35px;}
-.outer9 {position: absolute; top: 73px; left: -45px; min-width: 35px;}
-.outer10 {position: absolute; top: 20px; left: -32px; min-width: 35px;}
-.outer11 {position: absolute; top: -23px; left: 10px; min-width: 35px;}
-.outer12 {position: absolute; top: -40px; left: 70px; min-width: 35px;}
+.outer6 {position: absolute; top: 182px; left: 70px; min-width: 35px; text-align: center;}
+.outer7 {position: absolute; top: 165px; left: 10px; min-width: 35px; text-align: center;}
+.outer8 {position: absolute; top: 125px; left: -33px; min-width: 35px; text-align: center;}
+.outer9 {position: absolute; top: 73px; left: -45px; min-width: 35px; text-align: center;}
+.outer10 {position: absolute; top: 20px; left: -32px; min-width: 35px; text-align: center;}
+.outer11 {position: absolute; top: -23px; left: 10px; min-width: 35px; text-align: center;}
+.outer12 {position: absolute; top: -40px; left: 70px; min-width: 35px; text-align: center;}
 
 /* ball position styling */
 .b1 {position: absolute; top: 10px; left: 101px;}
