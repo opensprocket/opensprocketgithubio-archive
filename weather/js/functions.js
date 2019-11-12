@@ -361,7 +361,7 @@ for (let i = 0, x = 12; i < x; i++){
     conditionHour = conditionHour - 12; 
   }
   $("#forecast .outer" + conditionHour).innerHTML = "<img src=\"" + currentData[i][2] + "\" alt=\"Hourly weather condition\">";
-  console.log(`Updated ${conditionHour} at postition ${$("#forecast .outer" + conditionHour)}`);
+  // console.log(`Updated ${conditionHour} to ${currentData[i][2]}`);
   conditionHour++;
   
 }
