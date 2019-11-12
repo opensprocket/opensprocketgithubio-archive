@@ -117,22 +117,33 @@ function changeSummaryBackground(currCond){
   switch (condition) {
     case "clear":
     case "sunny":
+    case "mostly sunny":
+    case "partly sunny":
+    case "mostly clear":
       conditionIndex += 0;
       break;
     case "cloudy":
+    case "partly cloudy":
+    case "overcast":
+    case "mostly cloudy":
       conditionIndex += 1;
       break;
     case "fog":
       conditionIndex += 2;
       break;
     case "rain":
+    case "showers":
+    case "thunderstorms":
+    case "sleet":
       conditionIndex += 3;
       break;
     case "snow":
+    case "snow showers":
+    case "freezing rain":
       conditionIndex += 4;
       break;
     default:
-      console.log("Error: Weather type is invalid.")
+      console.log("changeSummaryBackground() Error: Weather type is invalid.")
       break;
   }
   console.log(`Value of conditionIndex: ${conditionIndex}`);
