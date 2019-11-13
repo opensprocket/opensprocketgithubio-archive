@@ -36,6 +36,7 @@ menuButton.addEventListener("click", toggleMobileMenu); // add event listener to
 // Fetch information from JSON
 let weatherURL = "/weather/js/idahoweather.json";
 let cityName = $("#city").getAttribute("data-city");
+console.log(`cityName: ${cityName}`);
 fetchWeatherData(weatherURL, cityName);
 
 });
