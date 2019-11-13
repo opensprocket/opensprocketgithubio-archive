@@ -142,6 +142,7 @@ function changeSummaryBackground(currCond){
     case "snow":
     case "snow showers":
     case "freezing rain":
+    case "blizzard":
       conditionIndex += 4;
       break;
     default:
