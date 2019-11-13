@@ -146,7 +146,7 @@ function changeSummaryBackground(currCond){
       conditionIndex += 4;
       break;
     default:
-      console.log("changeSummaryBackground() Error: Weather type is invalid.")
+      console.log("changeSummaryBackground() Error: Weather type is invalid.");
       break;
   }
   console.log(`Value of conditionIndex: ${conditionIndex}`);
