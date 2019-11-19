@@ -190,7 +190,7 @@ function fetchWeatherData(weatherURL, cityName){
     
     // Store in local storage in a JSON file
     const cityData = JSON.stringify({fullName,locCoords});
-    locStor.setItem("fullName", cityData); // Note: This can be edited by the client!!
+    locStor.setItem(fullName, cityData); // Note: This can be edited by the client!!
     console.log(`Successfully saved fullName to session storage: ${cityData}`);
 
     // Temperature data
