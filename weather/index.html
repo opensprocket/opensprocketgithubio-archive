@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Josh Breiter">
+<meta name="description" content="Homepage of the Cloudi Weather service. Weather for the information age. ">
+  <title id="page-title"> | Cloudi Weather</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="/weather/css/main.css" media="screen"> 
+<link rel="stylesheet" href="/weather/css/medium.css" media="screen and (min-width: 476px)">
+<link rel="stylesheet" href="/weather/css/large.css" media="screen and (min-width: 801px)">
+<link rel="shortcut icon" href="/weather/images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
+</head>
+<body>
+  <div class="main-container">  
+      <header>
+        <img src="/weather/images/cloudi-logo.svg" alt="logo for the cloudi weather site">
+        <section>
+          <h1>Cloudi Weather</h1>
+          <span class="tagline">Weather for the Information Age</span>
+        </section>
+      </header>
+      <nav id="page-nav">
+        <button id="menuBtn">&#9776; Menu</button>
+        <ul class="navigation">
+          <li><a href="./index.html" title="Go to the homepage">Home</a></li>
+          <li><a href="./locations/preston.html" id="city" data-city="Preston" title="Go to the Preston page">Preston</a></li>
+          <li><a href="./locations/soda-springs.html" title="Go to the Soda Springs page">Soda Springs</a></li>
+          <li><a href="#" title="Go to the Fish Haven page">Fish Haven</a></li>
+          <li><a href="#" title="Go to the Storm Center page">Storm Center</a></li>
+          <li><a href="#" title="Go to the Gallery page">Gallery</a></li>
+        </ul>
+      </nav>
+      <section id="status" class="flex">Please be patient, fetching latest weather data.</section>
+      <main id="main-content" class="hide">
+        <section class="location">
+          <h1 id="contentHeading"></h1>
+          <p class="gps-coords" id="locCoords">GPS: 42.0963° N, 111.8766° W</p>
+        </section>
+        <section class="current-condition ">
+          <ul class="grid">
+            <li class="current-temp">42&deg;</li>
+            <li class="feels-like">Feels like: <span id="wind-chill"></span>&deg;</li>
+            <li class="low-temp">18&deg;</li>
+            <li class="high-temp">58&deg;</li>
+            <li class="wind"><span class="wi wi-strong-wind"></span> 12mph</li>
+            <li class="gusts">Gusts: 30mph</li>
+          </ul>
+        </section>
+        <section class="temperature">
+          <h2>Temperature</h2>
+          <!-- begin component -->
+          <div class="component-container">
+              <div class="component-circle">
+              <!--   begin center -->
+                <div class="center1">&nbsp;&deg;F</div>
+              <!--  begin inner section  -->
+                <div class="inner1">1</div>
+                <div class="inner2">2</div>
+                <div class="inner3">3</div>
+                <div class="inner4">4</div>
+                <div class="inner5">5</div>
+                <div class="inner6">6</div>
+                <div class="inner7">7</div>
+                <div class="inner8">8</div>
+                <div class="inner9">9</div>
+                <div class="inner10">10</div>
+                <div class="inner11">11</div>
+                <div class="inner12">12</div>
+              <!--  begin outer section  -->
+                <div class="outer1">99&deg;</div>
+                <div class="outer2">99&deg;</div>
+                <div class="outer3">99&deg;</div>
+                <div class="outer4">99&deg;</div>
+                <div class="outer5">99&deg;</div>
+                <div class="outer6">99&deg;</div>
+                <div class="outer7">99&deg;</div>
+                <div class="outer8">99&deg;</div>
+                <div class="outer9">99&deg;</div>
+                <div class="outer10">99&deg;</div>
+                <div class="outer11">99&deg;</div>
+                <div class="outer12">99&deg;</div> 
+                <div class="ball"></div>
+              </div>
+            </div>
+            <!-- end component -->
+        </section>
+        <section class="wind-forecast">
+          <h2>Wind</h2>
+          <!-- begin component -->
+          <div class="component-container">
+              <div class="component-circle">
+              <!--   begin center -->
+                <div class="wind-forecast-c1 wi wi-cloudy-gusts"></div>
+              <!--  begin inner section  -->
+                <div class="inner1">1</div>
+                <div class="inner2">2</div>
+                <div class="inner3">3</div>
+                <div class="inner4">4</div>
+                <div class="inner5">5</div>
+                <div class="inner6">6</div>
+                <div class="inner7">7</div>
+                <div class="inner8">8</div>
+                <div class="inner9">9</div>
+                <div class="inner10">10</div>
+                <div class="inner11">11</div>
+                <div class="inner12">12</div>
+              <!--  begin outer section  -->
+                <div class="outer1">99</div>
+                <div class="outer2">99</div>
+                <div class="outer3">99</div>
+                <div class="outer4">99</div>
+                <div class="outer5">99</div>
+                <div class="outer6">99</div>
+                <div class="outer7">99</div>
+                <div class="outer8">99</div>
+                <div class="outer9">99</div>
+                <div class="outer10">99</div>
+                <div class="outer11">99</div>
+                <div class="outer12">99</div>
+                <div class="ball"></div>
+              </div>
+            </div>
+            <!-- end component -->
+        </section>
+        <section id="forecast" class="forecast">
+          <h2>Forecast</h2>
+          <!-- begin component -->
+          <div class="component-container">
+              <div class="component-circle">
+              <!--   begin center -->
+                <div class="forecast-c1 wi wi-day-sunny"></div>
+              <!--  begin inner section  -->
+                <div class="inner1">1</div>
+                <div class="inner2">2</div>
+                <div class="inner3">3</div>
+                <div class="inner4">4</div>
+                <div class="inner5">5</div>
+                <div class="inner6">6</div>
+                <div class="inner7">7</div>
+                <div class="inner8">8</div>
+                <div class="inner9">9</div>
+                <div class="inner10">10</div>
+                <div class="inner11">11</div>
+                <div class="inner12">12</div>
+              <!--  begin outer section  -->
+                <div class="outer1"></div>
+                <div class="outer2"></div>
+                <div class="outer3"></div>
+                <div class="outer4"></div>
+                <div class="outer5"></div>
+                <div class="outer6"></div>
+                <div class="outer7"></div>
+                <div class="outer8"></div>
+                <div class="outer9"></div>
+                <div class="outer10"></div>
+                <div class="outer11"></div>
+                <div class="outer12"></div>
+                <div class="ball"></div>
+              </div>
+            </div>
+            <!-- end component -->
+        </section>
+      </main>
+      <footer class="navigation">
+        <section>
+            <span id="copyright-year"></span> | <span id="last-modified"></span>
+        </section>
+      </footer>
+  </div>
+  <script async src="/weather/js/functions.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+  <script>
+    WebFont.load({google: {families: ['IBM Plex Sans','Patua One']}});
+  </script>
+</body>
+</html>
