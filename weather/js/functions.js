@@ -24,15 +24,6 @@ copyrightYear();  // builds and displays copyright year
 const menuButton = document.querySelector("#menuBtn"); // select menu button
 menuButton.addEventListener("click", toggleMobileMenu); // add event listener to menu button & call function on click
 
-// Values for buildWindChill()
-// let temp = 31;
-// let speed = 5;
-// buildWindChill(speed, temp); // calculate & display feels like temperature
-
-// Values for timeBall()
-// let hour = "11";
-// timeBall(hour);
-
 // Fetch information from JSON
 let weatherURL = "/weather/js/idahoweather.json";
 let cityName = $("#city").getAttribute("data-city");
