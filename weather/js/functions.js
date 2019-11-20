@@ -455,3 +455,18 @@ function getWeather(stationId) {
    }) 
   .catch(error => console.log('There was a getWeather() error: ', error)) 
  }
+
+ // converts meters to feet
+function metersToFeet(meters) {
+  return meters * 3.281;
+}
+
+// converts celsius to fahrenheit
+function celsiusToFahrenheit(celsiusTemp) {
+  return (celsiusTemp * 9/5) + 32;
+}
+
+// converts meters/sec to miles/hour
+function metersPerSecondToMph (speed) {
+  return speed / 2.237;
+}
