@@ -377,3 +377,25 @@ mainContent.setAttribute("class", ""); // Remove .hide from #main-content
 statusBox.setAttribute("class", "hide"); // Add .hide to statusBox
 
 }
+
+function getLocation (locale) {
+  const URL = "https://api.weather.gov/points/" + locale;
+  fetch(URL, idHeader)
+  .then(function(response){
+    if(response.ok){
+      return response.json(); // return json file if ok
+    }
+    throw new Error("Response not OK.");
+  })
+  .then(function(data){
+    console.log("getLocation(): JSON payload: ");
+    console.log(data); 
+    // store name and state in local storage
+    locStor.setItem("locName", data.properties.relativeLocation.properties.city);
+    locStor.setItem("locState", data.properties.relativeLocation.properties.state);
+    // get weather station id
+    let stationsURL = data.properties.observationStations;
+    getStationId(stationsURL); // get the station ID from the URL
+  })
+  .catch (error => console.log("There was a getLocation() error: ", error)) // log errors to console
+}
