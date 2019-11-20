@@ -426,3 +426,29 @@ function getStationId (stationsURL) {
   })
   .catch(error => console.log("There was a getStationId() error: ", error));
 }
+
+// Get weather based on station ID
+function getWeather(stationId) { 
+  // This is the URL for current observation data 
+  const URL = 'https://api.weather.gov/stations/' + stationId + '/observations/latest';
+  fetch(URL, idHeader) 
+  .then(function(response){
+    if(response.ok){ 
+     return response.json(); 
+    } 
+    throw new ERROR('Response not OK.');
+  })
+  .then(function (data) { 
+    console.log('From getWeather() function:'); 
+    console.log(data);
+  
+    // Store current weather information to sessionStorage 
+
+
+    // Call the getForecast function
+
+    // Call the getHourly function
+
+   }) 
+  .catch(error => console.log('There was a getWeather() error: ', error)) 
+ }
