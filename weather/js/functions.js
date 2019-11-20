@@ -33,6 +33,8 @@ let cityName = $("#city").getAttribute("data-city");
 console.log(`cityName: ${cityName}`);
 fetchWeatherData(weatherURL, cityName);
 
+getGeoLocation();
+
 });
 
 // Last modified date
@@ -167,18 +169,19 @@ function fetchWeatherData(weatherURL, cityName){
     throw new error("Network response was not ok."); // log new error to console
   })
   .then(function(data){
-    console.log(`${data}`); // Verify and display data recieved
-    let p = data[cityName]; // uses cityName to ID which object to look into
+    console.log("data recived from fetchWeatherData():")
+    console.log(data); // Verify and display data recieved
+    let city = data[cityName]; // uses cityName to ID which object to look into
     console.log(`City Name: ${cityName}`);
     // Get & build location info
-    let locName = p.properties.relativeLocation.properties.city;
-    let locState = p.properties.relativeLocation.properties.state;
+    let locName = city.properties.relativeLocation.properties.city;
+    let locState = city.properties.relativeLocation.properties.state;
     let fullName = locName + ", " + locState; // Output
     console.log(`fullName is: ${fullName}`);
     
     // Get & build Lat + Long
-    let locLat = p.geometry.coordinates[0]; 
-    let locLong = p.geometry.coordinates[1];
+    let locLat = city.geometry.coordinates[0]; 
+    let locLong = city.geometry.coordinates[1];
     let locCoords = locLat + ", " + locLong; // Output
     console.log(`locCoords: ${locCoords}`);
     
@@ -188,16 +191,16 @@ function fetchWeatherData(weatherURL, cityName){
     console.log(`Successfully saved fullName to session storage: ${cityData}`);
 
     // Temperature data
-    let temp = p.properties.relativeLocation.properties.temperature;
-    let lowTemp = p.properties.relativeLocation.properties.lowTemp;
-    let highTemp = p.properties.relativeLocation.properties.highTemp;
+    let temp = city.properties.relativeLocation.properties.temperature;
+    let lowTemp = city.properties.relativeLocation.properties.lowTemp;
+    let highTemp = city.properties.relativeLocation.properties.highTemp;
 
     // Wind data
-    let windSpeed = p.properties.relativeLocation.properties.windSpeed;
-    let windGust = p.properties.relativeLocation.properties.windSpeed;
+    let windSpeed = city.properties.relativeLocation.properties.windSpeed;
+    let windGust = city.properties.relativeLocation.properties.windSpeed;
 
     // Hourly data
-    getHourly(p.properties.forecastHourly);
+    getHourly(city.properties.forecastHourly);
 
     // Store in session storage
     sesStor.setItem("fullName", fullName);
@@ -383,7 +386,7 @@ statusBox.setAttribute("class", "hide"); // Add .hide to statusBox
 
 // gets location data from NWS API
 function getLocation (locale) {
-  const URL = "https://api.weather.gov/points/" + locale;
+  const URL = "https://api.weather.gov/points/" + locale; // build url to request location from NWS API
   fetch(URL, idHeader)
   .then(function(response){
     if(response.ok){
@@ -397,6 +400,10 @@ function getLocation (locale) {
     // store name and state in local storage
     locStor.setItem("locName", data.properties.relativeLocation.properties.city);
     locStor.setItem("locState", data.properties.relativeLocation.properties.state);
+    // store forecastURL and forecastHourlyURL to session storage
+    sesStor.setItem("forecastURL", data.properties.forecast);
+    sesStor.setItem("forecastHourlyURL", data.properties.forecastHourly);
+
     // get weather station id
     let stationsURL = data.properties.observationStations;
     getStationId(stationsURL); // get the station ID from the URL
@@ -439,34 +446,60 @@ function getWeather(stationId) {
     if(response.ok){ 
      return response.json(); 
     } 
-    throw new ERROR('Response not OK.');
+    throw new ERROR("Response not OK.");
   })
   .then(function (data) { 
     console.log('From getWeather() function:'); 
     console.log(data);
   
     // Store current weather information to sessionStorage 
-
+    // get temp, log & store to session storage
+    let temp = celsiusToFahrenheit(data.properties.temperature.value);
+    console.log(`getWeather(): The value of temp is: ${temp}`);
+    sesStor.setItem("temp", temp);
+    // get windspeed, log & store to session storage
+    let windSpeed = metersPerSecondToMph(data.properties.windSpeed.value);
+    console.log(`getWeather(): the value of windSpeed is: ${windSpeed}`);
+    sesStor.setItem("windSpeed", windSpeed);
+    // get wind gust speed, log & store to session storage
+    let windGust = metersPerSecondToMph(data.properties.windGust.value);
+    console.log(`getWeather(): the value of windGust is: ${windGust}`);
+    sesStor.setItem("windGust", windGust);
 
     // Call the getForecast function
-
+    getForecast(sesStor.getItem("forecastURL"));
     // Call the getHourly function
-
+    getHourly(sesStor.getItem("forecastHourlyURL"));
    }) 
   .catch(error => console.log('There was a getWeather() error: ', error)) 
  }
 
+ function getForecast(URL) {
+  fetch(URL, idHeader)
+  .then(function(response){
+    if(response.ok){
+      return response.json();
+    }
+    throw new ERROR("Response not OK.")
+  })
+  .then(function (data) {
+    console.log("From getForecast function:");
+    console.log(data); // log data returned from NWS API
+
+  })
+ }
+
  // converts meters to feet
 function metersToFeet(meters) {
-  return meters * 3.281;
+  return (meters * 3.281).toFixed(0);
 }
 
 // converts celsius to fahrenheit
 function celsiusToFahrenheit(celsiusTemp) {
-  return (celsiusTemp * 9/5) + 32;
+  return ((celsiusTemp * 9/5) + 32).toFixed(0);
 }
 
 // converts meters/sec to miles/hour
 function metersPerSecondToMph (speed) {
-  return speed / 2.237;
+  return (speed / 2.237).toFixed(1);
 }
