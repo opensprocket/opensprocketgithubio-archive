@@ -12,6 +12,9 @@ var locStor = window.localStorage;
 var sesStor = window.sessionStorage;
 var $ = document.querySelector.bind(document);
 var $$ = document.querySelectorAll.bind(document);
+// Custom header for NWS API
+var idHeader = {headers: {"User-Agent": "Student Learning Project - bre13011@byui.edu"}};
+
 
 console.log("Loaded functions.js successfully!"); // log the load of the script to console
 
