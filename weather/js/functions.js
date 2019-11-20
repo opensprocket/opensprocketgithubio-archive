@@ -378,6 +378,7 @@ statusBox.setAttribute("class", "hide"); // Add .hide to statusBox
 
 }
 
+// gets location data from NWS API
 function getLocation (locale) {
   const URL = "https://api.weather.gov/points/" + locale;
   fetch(URL, idHeader)
@@ -398,4 +399,30 @@ function getLocation (locale) {
     getStationId(stationsURL); // get the station ID from the URL
   })
   .catch (error => console.log("There was a getLocation() error: ", error)) // log errors to console
+}
+
+// Get the station ID by URL (obtained in getLocation())
+function getStationId (stationsURL) {
+  fetch(stationsURL, idHeader)
+  .then(function(response){
+    if(response.ok){
+      return response.json();
+    }
+    throw new Error("Response not OK.");
+  })
+  .then(function (data){
+    console.log(`getStationId(): JSON payload:`);
+    console.log(data);
+    // store station ID + elevation(meters)
+    let stationId = data.features[0].properties.stationIdentifier;
+    let stationElevation = data.features[0].properties.elevation.value;
+    console.log(`getStationId(): Station and Elevation are: ${stationId} ${stationElevation}`);
+    // store to localstorage
+    locStor.setItem("stationId", stationId);
+    locStor.setItem("stationElevation", stationElevation);
+    
+    // get weather for this station
+    getWeather(stationId);
+  })
+  .catch(error => console.log("There was a getStationId() error: ", error));
 }
