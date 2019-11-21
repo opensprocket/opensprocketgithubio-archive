@@ -1,3 +1,13 @@
+"use strict"; // use ES6
+//
+// Geolocation Script
+// 
+
+var locStor = window.localStorage;
+var sesStor = window.sessionStorage;
+var $ = document.querySelector.bind(document);
+var $$ = document.querySelectorAll.bind(document);
+
 // Gets geolocation
 function getGeoLocation() {
   const status = $("#status");

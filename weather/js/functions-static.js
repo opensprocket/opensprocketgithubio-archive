@@ -29,9 +29,9 @@ menuButton.addEventListener("click", toggleMobileMenu); // add event listener to
 
 // Fetch information from JSON
 let weatherURL = "/weather/js/idahoweather.json";
-// let cityName = $("#city").getAttribute("data-city");
-// console.log(`cityName: ${cityName}`);
-// fetchWeatherData(weatherURL, cityName);
+let cityName = $("#city").getAttribute("data-city");
+console.log(`cityName: ${cityName}`);
+fetchWeatherData(weatherURL, cityName);
 
 getGeoLocation();
 
@@ -158,8 +158,7 @@ function changeSummaryBackground(currCond){
   console.log(`${imageURL} has been set as the background.`);
 }
 
-// Fetch weather data and store in local storage 
-// use only for pages built from static JSON!
+// Fetch weather data and store in local storage
 function fetchWeatherData(weatherURL, cityName){
   // let cityName = "Preston"; // Targeted city
   fetch(weatherURL)
@@ -398,14 +397,9 @@ function getLocation (locale) {
   .then(function(data){
     console.log("getLocation(): JSON payload: ");
     console.log(data); 
-    
     // store name and state in local storage
-    let locName = data.properties.relativeLocation.properties.city;
-    let locState = data.properties.relativeLocation.properties.state;
-    let location = locName + ", " + locState;
-    console.log(`getLocation(): Value of location: ${location}`);
-    locStor.setItem(location, location);
-    sesStor.setItem("fullName", location);
+    locStor.setItem("locName", data.properties.relativeLocation.properties.city);
+    locStor.setItem("locState", data.properties.relativeLocation.properties.state);
     // store forecastURL and forecastHourlyURL to session storage
     sesStor.setItem("forecastURL", data.properties.forecast);
     sesStor.setItem("forecastHourlyURL", data.properties.forecastHourly);
