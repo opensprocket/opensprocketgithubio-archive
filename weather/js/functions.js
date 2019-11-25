@@ -87,7 +87,8 @@ function timeBall(hour){
 // Summary background image switching
 function changeSummaryBackground(currCond){
   console.log(`Value of currCond: ${currCond}`);
-  let condition = (currCond.toLowerCase()).trim(); // standardize input
+  let condition = getShortForecast(currCond);
+  // (currCond.toLowerCase()).trim(); // standardize input
   console.log(`Value of condition: ${condition}`);
   let conditionIndex = 0; // set condition index to 0
   console.log(`Value of conditionIndex: ${conditionIndex}`);
@@ -114,31 +115,18 @@ function changeSummaryBackground(currCond){
   // increment condition index based on weather status
   switch (condition) {
     case "clear":
-    case "sunny":
-    case "mostly sunny":
-    case "partly sunny":
-    case "mostly clear":
       conditionIndex += 0;
       break;
     case "cloudy":
-    case "partly cloudy":
-    case "overcast":
-    case "mostly cloudy":
       conditionIndex += 1;
       break;
     case "fog":
       conditionIndex += 2;
       break;
     case "rain":
-    case "showers":
-    case "thunderstorms":
-    case "sleet":
       conditionIndex += 3;
       break;
     case "snow":
-    case "snow showers":
-    case "freezing rain":
-    case "blizzard":
       conditionIndex += 4;
       break;
     default:
@@ -156,6 +144,24 @@ function changeSummaryBackground(currCond){
   // console.log(`backgroundImg: ${backgroundImg}`);
   backgroundImg.setProperty("--dynamic-weather-background", `${imageURL}`); 
   console.log(`${imageURL} has been set as the background.`);
+}
+
+function getShortForecast (shortForecast) {
+  let searchTerm = shortForecast.toLowerCase();
+  let keyword;
+  if (searchTerm.includes("snow") || searchTerm.includes("blizzard") || searchTerm.includes("freezing")) {
+    keyword = "snow"
+  }
+  if (searchTerm.includes("rain") || searchTerm.includes("sleet") || searchTerm.includes("freezing") || searchTerm.includes("thunder") || searchTerm.includes("sleet")) {
+    keyword = "rain";
+  }
+  if (searchTerm.includes("cloudy") || searchTerm.includes("overcast") || searchTerm.includes("mostly")) {
+    keyword = "cloudy";
+  }
+  if (searchTerm.includes("sunny") || searchTerm.includes("clear")) {
+    keyword = "clear";
+  }
+  return keyword;
 }
 
 // // Fetch weather data and store in local storage 
