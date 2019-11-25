@@ -18,7 +18,8 @@ function getGeoLocation() {
       console.log(position);
       const lat = position.coords.latitude;
       const long = position.coords.longitude;
-      const locale = long.toFixed(4) + "," + lat.toFixed(4); // combine into locale
+      const locale = lat.toFixed(4) + "," + long.toFixed(4); // combine into locale 
+      // reques to NWS API must be lat,long (and not the other way around!)
       sesStor.setItem("locCoords", locale);
       console.log(`getGeoLocation(): Lat and Long are ${locale}`); 
       getLocation(locale); // get location
