@@ -18,7 +18,8 @@ function getGeoLocation() {
       console.log(position);
       const lat = position.coords.latitude;
       const long = position.coords.longitude;
-      const locale = lat + "," + long; // combine into locale
+      const locale = long.toFixed(4) + "," + lat.toFixed(4); // combine into locale
+      sesStor.setItem("locCoords", locale);
       console.log(`getGeoLocation(): Lat and Long are ${locale}`); 
       getLocation(locale); // get location
     })

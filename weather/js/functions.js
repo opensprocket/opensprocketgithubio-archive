@@ -28,7 +28,7 @@ const menuButton = document.querySelector("#menuBtn"); // select menu button
 menuButton.addEventListener("click", toggleMobileMenu); // add event listener to menu button & call function on click
 
 // Fetch information from JSON
-let weatherURL = "/weather/js/idahoweather.json";
+// let weatherURL = "/weather/js/idahoweather.json";
 // let cityName = $("#city").getAttribute("data-city");
 // console.log(`cityName: ${cityName}`);
 // fetchWeatherData(weatherURL, cityName);
@@ -158,70 +158,70 @@ function changeSummaryBackground(currCond){
   console.log(`${imageURL} has been set as the background.`);
 }
 
-// Fetch weather data and store in local storage 
-// use only for pages built from static JSON!
-function fetchWeatherData(weatherURL, cityName){
-  // let cityName = "Preston"; // Targeted city
-  fetch(weatherURL)
-  .then(function(response){
-    if(response.ok){
-      return response.json(); // return a json file
-    }
-    throw new error("Network response was not ok."); // log new error to console
-  })
-  .then(function(data){
-    console.log("fetchWeatherData(): data recived from fetchWeatherData():")
-    console.log(data); // Verify and display data recieved
-    let city = data[cityName]; // uses cityName to ID which object to look into
-    console.log(`fetchWeatherData(): City Name: ${cityName}`);
-    // Get & build location info
-    let locName = city.properties.relativeLocation.properties.city;
-    let locState = city.properties.relativeLocation.properties.state;
-    let fullName = locName + ", " + locState; // Output
-    console.log(`fetchWeatherData(): fullName is: ${fullName}`);
+// // Fetch weather data and store in local storage 
+// // use only for pages built from static JSON!
+// function fetchWeatherData(weatherURL, cityName){
+//   // let cityName = "Preston"; // Targeted city
+//   fetch(weatherURL)
+//   .then(function(response){
+//     if(response.ok){
+//       return response.json(); // return a json file
+//     }
+//     throw new error("Network response was not ok."); // log new error to console
+//   })
+//   .then(function(data){
+//     console.log("fetchWeatherData(): data recived from fetchWeatherData():")
+//     console.log(data); // Verify and display data recieved
+//     let city = data[cityName]; // uses cityName to ID which object to look into
+//     console.log(`fetchWeatherData(): City Name: ${cityName}`);
+//     // Get & build location info
+//     let locName = city.properties.relativeLocation.properties.city;
+//     let locState = city.properties.relativeLocation.properties.state;
+//     let fullName = locName + ", " + locState; // Output
+//     console.log(`fetchWeatherData(): fullName is: ${fullName}`);
     
-    // Get & build Lat + Long
-    let locLat = city.geometry.coordinates[0]; 
-    let locLong = city.geometry.coordinates[1];
-    let locCoords = locLat + ", " + locLong; // Output
-    console.log(`fetchWeatherData(): locCoords: ${locCoords}`);
+//     // Get & build Lat + Long
+//     let locLat = city.geometry.coordinates[0]; 
+//     let locLong = city.geometry.coordinates[1];
+//     let locCoords = locLat + ", " + locLong; // Output
+//     console.log(`fetchWeatherData(): locCoords: ${locCoords}`);
     
-    // Store in local storage in a JSON file
-    const cityData = JSON.stringify({fullName,locCoords});
-    locStor.setItem(fullName, cityData); // Note: This can be edited by the client!!
-    console.log(`fetchWeatherData(): Successfully saved fullName to session storage: ${cityData}`);
+//     // Store in local storage in a JSON file
+//     const cityData = JSON.stringify({fullName,locCoords});
+//     locStor.setItem(fullName, cityData); // Note: This can be edited by the client!!
+//     console.log(`fetchWeatherData(): Successfully saved fullName to session storage: ${cityData}`);
 
-    // Temperature data
-    let temp = city.properties.relativeLocation.properties.temperature;
-    let lowTemp = city.properties.relativeLocation.properties.lowTemp;
-    let highTemp = city.properties.relativeLocation.properties.highTemp;
+//     // Temperature data
+//     let temp = city.properties.relativeLocation.properties.temperature;
+//     let lowTemp = city.properties.relativeLocation.properties.lowTemp;
+//     let highTemp = city.properties.relativeLocation.properties.highTemp;
 
-    // Wind data
-    let windSpeed = city.properties.relativeLocation.properties.windSpeed;
-    let windGust = city.properties.relativeLocation.properties.windSpeed;
+//     // Wind data
+//     let windSpeed = city.properties.relativeLocation.properties.windSpeed;
+//     let windGust = city.properties.relativeLocation.properties.windSpeed;
 
-    // Hourly data
-    getHourly(city.properties.forecastHourly);
+//     // Hourly data
+//     getHourly(city.properties.forecastHourly);
 
-    // Store in session storage
-    sesStor.setItem("fullName", fullName);
-    sesStor.setItem("locCoords", locCoords);
-    sesStor.setItem("temp", temp);
-    sesStor.setItem("lowTemp", lowTemp);
-    sesStor.setItem("highTemp", highTemp);
-    sesStor.setItem("windSpeed", windSpeed);
-    sesStor.setItem("windGust", windGust);
+//     // Store in session storage
+//     sesStor.setItem("fullName", fullName);
+//     sesStor.setItem("locCoords", locCoords);
+//     sesStor.setItem("temp", temp);
+//     sesStor.setItem("lowTemp", lowTemp);
+//     sesStor.setItem("highTemp", highTemp);
+//     sesStor.setItem("windSpeed", windSpeed);
+//     sesStor.setItem("windGust", windGust);
 
-  })
-  .catch(function(error){
-    console.log("fetchWeatherData(): There was a fetch problem: ", error.message);
-    statusBox.innerHTML = "Sorry, the data could not be processed.";
-  })
-}
+//   })
+//   .catch(function(error){
+//     console.log("fetchWeatherData(): There was a fetch problem: ", error.message);
+//     statusBox.innerHTML = "Sorry, the data could not be processed.";
+//   })
+// }
 
 // Get hourly forecast data
 function getHourly(URL) {
-  fetch(URL)
+  fetch(URL, idHeader )
    .then(function (response) {
     if (response.ok) {
      return response.json();
@@ -402,10 +402,16 @@ function getLocation (locale) {
     // store name and state in local storage
     let locName = data.properties.relativeLocation.properties.city;
     let locState = data.properties.relativeLocation.properties.state;
-    let location = locName + ", " + locState;
-    console.log(`getLocation(): Value of location: ${location}`);
-    locStor.setItem(location, location);
-    sesStor.setItem("fullName", location);
+    let fullName = locName + ", " + locState;
+    console.log(`getLocation(): Value of location: ${fullName}`);
+
+    // Create info for localStorage
+    let coords = sesStor.getItem("locCoords");
+    let locationPayload = JSON.stringify({fullName,coords});
+    locStor.setItem(location, locationPayload);
+
+    // store fullName for build page use
+    sesStor.setItem("fullName", fullName);
     // store forecastURL and forecastHourlyURL to session storage
     sesStor.setItem("forecastURL", data.properties.forecast);
     sesStor.setItem("forecastHourlyURL", data.properties.forecastHourly);
