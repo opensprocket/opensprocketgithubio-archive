@@ -269,12 +269,15 @@ function buildPage(){
 
   let fullNameNode = document.createTextNode(sesStor.getItem("fullName")); // get fullName from sesStor
   pageTitle.insertBefore(fullNameNode, pageTitle.childNodes[0]); // put fullName before existing text in title
-
+// set city name
   let contentHeading = $("#contentHeading");
-  contentHeading.innerHTML = sesStor.getItem("fullName"); // set #contentHeading to fullName
-
+  contentHeading.innerHTML = sesStor.getItem("fullName");
+// set lat & long coords
   let latlong = $("#locCoords");
-  latlong.innerHTML = sesStor.getItem("locCoords"); // set lat & long coords
+  latlong.innerHTML = sesStor.getItem("locCoords"); 
+// set city elevation
+  let elevation = $("elevation");
+  elevation.innerHTML = " | Elevation: " + sesStor.getItem("stationElevation") + " ft"; // need the spaces, otherwise it runs together (spans)
 
   changeSummaryBackground(sesStor.getItem("shortForecast")); // set background image
 
@@ -435,13 +438,13 @@ function getStationId (stationsURL) {
   .then(function (data){
     console.log(`getStationId(): JSON payload:`);
     console.log(data);
-    // store station ID + elevation(meters)
+    // store station ID + elevation (converted to feet)
     let stationId = data.features[0].properties.stationIdentifier;
-    let stationElevation = data.features[0].properties.elevation.value;
+    let stationElevation = metersToFeet(data.features[0].properties.elevation.value);
     console.log(`getStationId(): Station and Elevation are: ${stationId} ${stationElevation}`);
     // store to localstorage
     locStor.setItem("stationId", stationId);
-    locStor.setItem("stationElevation", stationElevation);
+    sesStor.setItem("stationElevation", stationElevation);
     
     // get weather for this station
     getWeather(stationId);
