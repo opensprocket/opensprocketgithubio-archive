@@ -280,7 +280,7 @@ function buildPage(){
   contentHeading.innerHTML = sesStor.getItem("fullName");
 // set lat & long coords + elevation
   let latlong = $("#locCoords");
-  latlong.innerHTML = sesStor.getItem("locCoords") + "<br><br>Elevation: " + sesStor.getItem("stationElevation") + "ft";
+  latlong.innerHTML = sesStor.getItem("locCoords") + "<br><br>Elevation: " + sesStor.getItem("stationElevation") + " ft";
 
   changeSummaryBackground(sesStor.getItem("shortForecast")); // set background image
 
