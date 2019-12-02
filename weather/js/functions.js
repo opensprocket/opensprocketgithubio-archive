@@ -414,7 +414,7 @@ function getLocation (locale) {
     // Create info for localStorage
     let coords = sesStor.getItem("locCoords");
     let locationPayload = JSON.stringify({fullName,coords});
-    locStor.setItem(location, locationPayload);
+    locStor.setItem(fullName, locationPayload);
 
     // store fullName for build page use
     sesStor.setItem("fullName", fullName);
