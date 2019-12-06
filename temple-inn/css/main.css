@@ -1,0 +1,174 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css?family=Alatsi|Oxygen&display=swap');
+
+/* Variables */
+:root {
+  --primary-background: #5c5c5c;
+  --secondary-background: #3d1308;
+  --tertiary-background: #7b0d1e;
+  --quartenary-background: #2664a0;
+  --white-background: white;
+  
+  --primary-accent: #7b0d1e;
+  --secondary-accent: #2664a0;
+  --tertiary-accent: #e5e5e5;
+
+  --primary-text-color: white;
+  --secondary-text-color: black;
+
+  --nav-background-hover-color: #b0132b;
+  --link-color: --primary-text-color;
+
+  --link-text-inactive-color: white;
+  --link-text-hover-color: #007cb9;
+  --link-text-visited-color: red;
+  
+  --default-font: "Oxygen", sans-serif;
+  --heading-font: "Alatsi", sans-serif;
+}
+
+/* Elements */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--link-text-inactive-color);
+
+}
+
+a:hover {
+  color: var(--link-text-hover-color);
+}
+
+body {
+  background-color: var(--primary-background);
+  color: var(--primary-text-color);
+  font-size: 16px;
+  font-family: var(--default-font);
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: var(--primary-text-color);
+  background-color: var(--tertiary-background);
+  font-family: var(--heading-font);
+  margin: 0;
+  padding: .5em .5em;
+}
+
+p {
+  padding: .5em;
+}
+
+header {
+  overflow: hidden;
+  background-color: var(--secondary-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: .25em 0 .25em 0;
+  min-height: 172px;
+}
+
+header>img {
+  min-width: 25vw;
+  max-height: 172px;
+  padding: .5em;
+}
+
+header>section>h1 {
+  background-color: var(--secondary-background);
+}
+
+nav {
+  background-color: var(--tertiary-background);
+  margin: .25em 0;
+  /* padding: .5em; */
+}
+
+nav button {
+  color: var(--primary-text-color);
+  background-color: var(--tertiary-background);
+  border: none;
+  width: 100%;
+  padding: .5em 0 .5em 0;
+  font-size: 1.5em;
+}
+
+.nav-active {
+  background-color: var(--secondary-background);
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul a {
+  display: block;
+  text-align: center;
+  padding: 1rem;
+}
+
+nav ul a:hover {
+  color: var(--primary-text-color);
+  background-color: var(--nav-background-hover-color);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: .5em;
+  row-gap: .5em;
+  background-color: var(--white-background);
+  color: var(--secondary-text-color);
+  margin: .25em 0;
+}
+
+footer {
+  background-color: var(--secondary-background);
+  text-align: center;
+  vertical-align: center;
+  width: 100%;
+  min-height: 75px;
+  margin: .25em 0;
+}
+
+/* Classes */
+
+.flex {display: flex;}
+.grid {display: grid;}
+.flex-col {flex-direction: column;}
+.flex-row {flex-direction: row;}
+
+.main-container {
+  margin: .25em auto .75em auto;
+  min-width: 320px;
+  background-color: var(--primary-background);
+  max-width: 1000px;
+}
+
+.tagline {
+  font-size: .8em;
+  padding: .2em .5em;
+  text-align: center;
+}
+
+.navigation li {
+  display: none;
+}
+
+.responsive li {
+  display: block;
+}
+
+
+.hide {display: none;}
+
+/* IDs */
