@@ -77,3 +77,4 @@ function buildPageTitle(){
   pageTitle.insertBefore(fullNameNode,pageTitle.childNodes[0]);
   console.log(`buildPageTitle: Successfully built page title to: ${title}`);
 }
+

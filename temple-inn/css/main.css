@@ -17,11 +17,11 @@
   --secondary-text-color: black;
 
   --nav-background-hover-color: #b0132b;
-  --link-color: --primary-text-color;
 
   --link-text-inactive-color: white;
   --link-text-hover-color: #007cb9;
   --link-text-visited-color: red;
+  --link-text-highlight-color: --secondary-accent;
   
   --default-font: "Oxygen", sans-serif;
   --heading-font: "Alatsi", sans-serif;
@@ -36,7 +36,7 @@
 
 a {
   text-decoration: none;
-  color: var(--link-text-inactive-color);
+  color: var(--primary-text-color);
 
 }
 
@@ -74,8 +74,9 @@ header {
 }
 
 header>img {
-  min-width: 25vw;
-  max-height: 172px;
+  min-width: 20vw;
+  max-width: 128px;
+  max-height: 128px;
   padding: .5em;
 }
 
@@ -168,7 +169,47 @@ footer {
   display: block;
 }
 
-
 .hide {display: none;}
+.dark-text {color: var(--secondary-text-color);}
 
-/* IDs */
+.body-link {
+  color: var(--link-text-highlight-color);
+  text-decoration: underline dotted black;
+}
+.body-link:hover {
+  background-color: #2664a0;
+  color: var(--primary-text-color);
+}
+/* caption container */
+.captioned-picture {
+  background-color: #5c5c5c;
+  border-radius: 20px;
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto 10px auto;
+}
+
+.captioned-picture img {
+  max-width: 90%;
+  margin: 15px auto 10px auto;
+}
+
+.captioned-picture p {
+  color: var(--primary-text-color);
+  text-align: center;
+  font-size: .9em;
+  padding: 0 0 .8em 0;
+}
+/* quicknav */
+.quick-nav {
+  list-style: none;
+}
+.quick-nav li a {
+  display: inline-block;
+  padding: 1em;
+  
+}
+.quick-nav li a:before {
+  content: "\00BB \0020";
+}
