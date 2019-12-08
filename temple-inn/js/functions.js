@@ -43,44 +43,6 @@ function toggleMobileNav(){
   menuBtn.classList.toggle("nav-active");
 }
 
-function buildPageTitle(){
-  let pageTitle = $("#page-title");
-  let currentPage = pageTitle.getAttribute("data-currentpage");
-  if (!currentPage){
-    return;
-  }
-  let title;
-  switch (currentPage) {
-    case "home":
-      title = "Home";
-      break;
-    case "attributions":
-      title = "Attributions";
-      break;
-    case "contact":
-      title = "Contact"
-      break;
-    case "reservations":
-      title = "Reservations";
-      break;
-    case "services":
-      title = "Services";
-      break;
-    case "temples":
-      title = "Temples";
-      break;
-    case "thanks":
-      title = "Thanks"
-      break;
-    default:
-      title = "New Page";
-      break;
-  }
-  let fullNameNode = document.createTextNode(title);
-  pageTitle.insertBefore(fullNameNode,pageTitle.childNodes[0]);
-  console.log(`buildPageTitle: Successfully built page title to: ${title}`);
-}
-
 function getContactFormData() {
   let fullName = $("#full-name");
   let emailAddress = $("#email-address");
