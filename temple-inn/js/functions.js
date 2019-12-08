@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function(){
   //functions to run go here!
   lastModified();
   copyrightYear();
-  buildPageTitle();
 
 });
 
