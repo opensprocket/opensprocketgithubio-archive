@@ -78,3 +78,14 @@ function buildPageTitle(){
   console.log(`buildPageTitle: Successfully built page title to: ${title}`);
 }
 
+function getContactFormData() {
+  let fullName = $("#full-name");
+  let emailAddress = $("#email-address");
+  let subject = $("#subject");
+  let message = $("#message");
+  sesStor.setItem("contact-fullName", fullName.value);
+  sesStor.setItem("contact-emailAddress", emailAddress.value);
+  sesStor.setItem("contact-subject", subject.value);
+  sesStor.setItem("contact-message", message.value);
+  console.log(`getContactFormData(): Successfully stored the contact form data into session storage.`);
+}
