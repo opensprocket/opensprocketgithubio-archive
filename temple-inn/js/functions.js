@@ -69,6 +69,9 @@ function buildPageTitle(){
     case "temples":
       title = "Temples";
       break;
+    case "thanks":
+      title = "Thanks"
+      break;
     default:
       title = "New Page";
       break;
