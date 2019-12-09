@@ -133,6 +133,14 @@ main {
   margin: .25em 0;
 }
 
+iframe {
+  display: block;
+  margin: 10px auto;
+  align-items: center;
+  width: 90%;
+  min-height: 450px;
+}
+
 footer {
   background-color: var(--secondary-background);
   text-align: center;
