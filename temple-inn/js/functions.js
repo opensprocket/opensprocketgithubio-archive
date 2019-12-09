@@ -17,6 +17,15 @@ document.addEventListener("DOMContentLoaded", function(){
 
 });
 
+// Add event listener to reservation page (only reservation page)
+if ($("#page-title").getAttribute("data-currentpage") == "reservations") {
+  // console.log(`Reservation page detection working! ${$("#page-title").getAttribute("data-currentpage")}`);
+  document.addEventListener("DOMContentLoaded", ()=>{
+    $("#submit").addEventListener("click", processData);
+  })
+}
+
+
 function lastModified(){
   const longDayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]; // full day name array
   const longMonthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; // full month name array
@@ -52,4 +61,38 @@ function getContactFormData() {
   sesStor.setItem("contact-subject", subject.value);
   sesStor.setItem("contact-message", message.value);
   console.log(`getContactFormData(): Successfully stored the contact form data into session storage.`);
+}
+
+let reservations = [];
+let processData = (event) => {
+  // stop the form from submitting
+  event.preventDefault();
+  let reservation = {
+  guests: document.querySelector('#guests').value,
+  resDate: document.querySelector('#resDate').value
+  }
+
+  // adds reservation to the end of the array of all reservations
+reservations.push(reservation);
+
+// reset the first, and only, form
+document.forms[0].reset;
+
+// see results in console
+console.log('newRes', {reservations});
+
+// Store to session Storage
+window.sessionStorage.setItem("reservations", JSON.stringify(reservations));
+
+// Retrieve from session storage
+let resList = JSON.parse(window.sessionStorage.getItem("reservations"));
+console.log(resList);
+
+// inject to the page
+const resDetails = document.querySelector("#resResult pre");
+resDetails.textContent = "\n" + JSON.stringify(reservations, "\t", 2);
+
+// display the results
+document.querySelector("#resResult").classList.remove("hide");
+
 }
