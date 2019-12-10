@@ -8,6 +8,10 @@ var locStor = window.localStorage;
 var sesStor = window.sessionStorage;
 var pageNav = $("#page-nav");
 
+var reservationForm = $("#reservation-form-container");
+var reservationStatus = $("#reservation-status");
+var reservationConfirmation = $("#reservation-confirmation");
+
 // DOM event listner
 document.addEventListener("DOMContentLoaded", function(){
 
@@ -17,13 +21,15 @@ document.addEventListener("DOMContentLoaded", function(){
 
 });
 
+$("#reservation-form").addEventListener('submit', function(event){event.preventDefault();});
+
 // Add event listener to reservation page (only reservation page)
-if ($("#page-title").getAttribute("data-currentpage") == "reservations") {
-  // console.log(`Reservation page detection working! ${$("#page-title").getAttribute("data-currentpage")}`);
-  document.addEventListener("DOMContentLoaded", ()=>{
-    $("#submit").addEventListener("click", processData);
-  })
-}
+// if ($("#page-title").getAttribute("data-currentpage") == "reservations") {
+//   // console.log(`Reservation page detection working! ${$("#page-title").getAttribute("data-currentpage")}`);
+//   document.addEventListener("DOMContentLoaded", ()=>{
+//     $("#submit").addEventListener("click", processData(event));
+//   })
+// }
 
 
 function lastModified(){
@@ -63,36 +69,72 @@ function getContactFormData() {
   console.log(`getContactFormData(): Successfully stored the contact form data into session storage.`);
 }
 
-let reservations = [];
-let processData = (event) => {
-  // stop the form from submitting
-  event.preventDefault();
+function processReservationData() {
   let reservation = {
-  guests: document.querySelector('#guests').value,
-  resDate: document.querySelector('#resDate').value
+    location: $("#res-location").value,
+    checkInDate: $("#res-check-in-date").value,
+    checkOutDate: $("#res-check-out-date").value,
+    roomType: $("#res-room-type").value,
+    numberOfRooms: $("#res-num-of-rooms").value,
+    firstName: $("#res-first-name").value,
+    lastName: $("#res-last-name").value,
+    emailAddress: $("#res-email-address").value,
+    phoneNumber: $("#res-phone-number").value,
+    country: $("#res-country").value,
+    state: $("#res-state").value
   }
+  console.log(`Value of reservation object:`);
+  console.log(reservation);
 
-  // adds reservation to the end of the array of all reservations
-reservations.push(reservation);
+  sesStor.setItem("reservation", JSON.stringify(reservation)); // store to session storage
+  // document.forms[0].reset; // reset form
+  // console.log("Reset form");
 
-// reset the first, and only, form
-document.forms[0].reset;
+  reservationForm.classList.add("hide");
+  reservationStatus.classList.remove("hide");
+  console.log("Hid reservation form, showed status box");
 
-// see results in console
-console.log('newRes', {reservations});
+  buildReservationConfirmation();
+}
 
-// Store to session Storage
-window.sessionStorage.setItem("reservations", JSON.stringify(reservations));
+function buildReservationConfirmation() {
+  let reservation = JSON.parse(sesStor.getItem("reservation"));
+  console.log("Value of JSON parsed from session storage: ");
+  console.log(reservation);
 
-// Retrieve from session storage
-let resList = JSON.parse(window.sessionStorage.getItem("reservations"));
-console.log(resList);
+  // build confirmation
+  let reservedRoomType;
+  switch (reservation.roomType) {
+    case "bed1":
+      reservedRoomType = "One King Bed, Regular room";
+      break;
+    case "bed2":
+      reservedRoomType = "Two Queen Beds, Regular room";
+      break;
+    case "suite1":
+      reservedRoomType = "One Queen Bed, Suite with Kitchenette";
+      break;
+    case "suite2":
+      reservedRoomType = "One King Bed, Suite with Kitchenette";
+      break;
+  }
+  console.log(`Reserved room type: ${reservedRoomType}`);
 
-// inject to the page
-const resDetails = document.querySelector("#resResult pre");
-resDetails.textContent = "\n" + JSON.stringify(reservations, "\t", 2);
+  $("#conf-name").innerHTML = "Name: " + reservation.firstName + " " + reservation.lastName;
+  $("#conf-email-address").innerHTML = "Email Address: " + reservation.emailAddress;
+  $("#conf-phone-number").innerHTML = "Phone Number: " + reservation.phoneNumber;
+  $("#conf-country-state").innerHTML = "Country and State: " + reservation.state + ", " + reservation.country;
+  $("#conf-location").innerHTML = "Hotel Location: " + reservation.location;
+  $("#conf-check-in").innerHTML = "Check-in Date: " + reservation.checkInDate;
+  $("#conf-check-out").innerHTML ="Check-out Date: " + reservation.checkOutDate;
+  $("#conf-room-type").innerHTML = "Room type: " + reservedRoomType;
+  $("#conf-number-of-rooms").innerHTML = "Number of Rooms: " + reservation.numberOfRooms;
 
-// display the results
-document.querySelector("#resResult").classList.remove("hide");
+  console.log("Set value of reservation confirmation");
+
+  reservationStatus.classList.add("hide");
+  reservationConfirmation.classList.remove("hide");
+
+  console.log("Hid reservation status, showing confirmation.");
 
 }

@@ -220,7 +220,7 @@ footer {
   padding: .5em 0;
 }
 
-.form input, textarea {
+.form input, textarea, select {
   display: block;
   padding: 10px;
   margin: -1px auto;
@@ -231,6 +231,17 @@ footer {
   width: 90%;
   font: inherit;
   transition-duration: 0.4s;
+}
+.form label {
+  display: block;
+  padding: 10px;
+  margin: -1px auto -8px auto;
+  position: relative;
+  width: 90%;
+}
+
+.form h3 {
+  background-color: var(--quartenary-background);
 }
 
 .form input:hover, textarea:hover { box-shadow: inset 0 1px 3px #5c5c5c;}
