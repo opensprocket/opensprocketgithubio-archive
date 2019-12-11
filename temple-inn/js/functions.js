@@ -12,6 +12,7 @@ var reservationForm = $("#reservation-form-container");
 var reservationStatus = $("#reservation-status");
 var reservationConfirmation = $("#reservation-confirmation");
 var collapsibleElement = $$(".collapsible")
+var currentPage = $("#page-title").getAttribute("data-currentpage");
 
 // DOM event listner
 document.addEventListener("DOMContentLoaded", function(){
@@ -22,9 +23,18 @@ document.addEventListener("DOMContentLoaded", function(){
 
 });
 
-$("#reservation-form").addEventListener('submit', function(event){event.preventDefault();});
+// enalbed for testing purposes
+if (currentPage == "reservations") {
+  $("#reservation-form").addEventListener('submit', function(event){event.preventDefault();});
+  console.log("Added reservation form submission event listener");
+}
 
+if (currentPage == "temples") {
+  let URL = "/temple-inn/data/closure-data.json";
+  fetchClosureData(URL);
+}
 
+// Functions
 
 function lastModified(){
   const longDayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]; // full day name array
@@ -133,6 +143,57 @@ function buildReservationConfirmation() {
 
 }
 
-function toggleCollapsible() {
+function fetchClosureData(URL) {
+  fetch(URL)
+  .then(function(response){
+    if (response.ok){
+      return response.json();
+    }
+    throw new ERROR("Response not OK.");
+  })
+  .then(function(data){
+    console.log("getClosureData(): Data returned from URL:");
+    console.log(data);
+    
+    // identify data
+    let rexburgClosures = JSON.stringify(data.rexburg.closureList);
+    let provoClosures = JSON.stringify(data.provo.closureList);
+    let atlantaClosures = JSON.stringify(data.atlanta.closureList);
+    let dallasClosures = JSON.stringify(data.dallas.closureList);
 
+    // store to session storage
+    sesStor.setItem("rexburgClosures", rexburgClosures);
+    sesStor.setItem("provoClosures", provoClosures );
+    sesStor.setItem("atlantaClosures", atlantaClosures);
+    sesStor.setItem("dallasClosures", dallasClosures);
+    displayClosureData(); // run displayClosureData function
+  })
+  .catch(error => console.log("fetchClosureData(): There was an errro: ", error));
+}
+
+function displayClosureData() {
+  let provoClosures = JSON.parse(sesStor.getItem("provoClosures"));
+  let rexburgClosures = JSON.parse(sesStor.getItem("rexburgClosures"));
+  let atlantaClosures = JSON.parse(sesStor.getItem("atlantaClosures"));
+  let dallasClosures = JSON.parse(sesStor.getItem("dallasClosures"));
+  
+  makeULFromArray(provoClosures, "provo-closure-schedule");
+  makeULFromArray(rexburgClosures, "rexburg-closure-schedule");
+  makeULFromArray(atlantaClosures, "atlanta-closure-schedule");
+  makeULFromArray(dallasClosures, "dallas-closure-schedule");
+  console.log("Completed building lists of closure data.");
+}
+
+function makeULFromArray (sourceArray, destination) {
+  let containerId = "#" + destination; // build query selector for destination
+  let listContainer = $(containerId); // set list container
+  console.log(`List container is:`);
+  console.log(listContainer);
+  // create li with contents of array for every element in sourceArray
+  for (let i = 0; i < sourceArray.length; i++) {
+    let item = document.createElement("li");
+    item.appendChild(document.createTextNode(sourceArray[i]));
+    listContainer.appendChild(item);
+    console.log(`Appended ${item} to ${listContainer}`);
+  }
 }
