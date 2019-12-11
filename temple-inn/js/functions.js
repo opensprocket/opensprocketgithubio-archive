@@ -11,6 +11,7 @@ var pageNav = $("#page-nav");
 var reservationForm = $("#reservation-form-container");
 var reservationStatus = $("#reservation-status");
 var reservationConfirmation = $("#reservation-confirmation");
+var collapsibleElement = $$(".collapsible")
 
 // DOM event listner
 document.addEventListener("DOMContentLoaded", function(){
@@ -23,13 +24,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
 $("#reservation-form").addEventListener('submit', function(event){event.preventDefault();});
 
-// Add event listener to reservation page (only reservation page)
-// if ($("#page-title").getAttribute("data-currentpage") == "reservations") {
-//   // console.log(`Reservation page detection working! ${$("#page-title").getAttribute("data-currentpage")}`);
-//   document.addEventListener("DOMContentLoaded", ()=>{
-//     $("#submit").addEventListener("click", processData(event));
-//   })
-// }
 
 
 function lastModified(){
@@ -136,5 +130,9 @@ function buildReservationConfirmation() {
   reservationConfirmation.classList.remove("hide");
 
   console.log("Hid reservation status, showing confirmation.");
+
+}
+
+function toggleCollapsible() {
 
 }

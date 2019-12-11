@@ -5,7 +5,9 @@
   #submit { 
     width: 95%;
   }
-
+  .body-link {
+    padding: 0;
+  }
   .col1 {
     grid-column: 1/2;
     margin: 15px;
