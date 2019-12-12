@@ -20,19 +20,26 @@ document.addEventListener("DOMContentLoaded", function(){
   //functions to run go here!
   lastModified();
   copyrightYear();
+  if (currentPage == "confirmation") {
+    buildReservationConfirmation();
+  }
+  if (currentPage == "temples") {
+  let URL = "/temple-inn/data/closure-data.json";
+  fetchClosureData(URL);
+  }
 
 });
 
 // enalbed for testing purposes
-if (currentPage == "reservations") {
-  $("#reservation-form").addEventListener('submit', function(event){event.preventDefault();});
-  console.log("Added reservation form submission event listener");
-}
+// if (currentPage == "reservations") {
+//   $("#reservation-form").addEventListener('submit', function(event){event.preventDefault();});
+//   console.log("Added reservation form submission event listener");
+// }
 
-if (currentPage == "temples") {
-  let URL = "/temple-inn/data/closure-data.json";
-  fetchClosureData(URL);
-}
+// if (currentPage == "confirmation") {
+//   console.log("You are now on the confirmation page.");
+//   window.onload = buildReservationConfirmation();
+// }
 
 // Functions
 
@@ -80,6 +87,7 @@ function processReservationData() {
     checkOutDate: $("#res-check-out-date").value,
     roomType: $("#res-room-type").value,
     numberOfRooms: $("#res-num-of-rooms").value,
+    additionalComments: $("#res-additional-comments").value,
     firstName: $("#res-first-name").value,
     lastName: $("#res-last-name").value,
     emailAddress: $("#res-email-address").value,
@@ -94,11 +102,11 @@ function processReservationData() {
   // document.forms[0].reset; // reset form
   // console.log("Reset form");
 
-  reservationForm.classList.add("hide");
-  reservationStatus.classList.remove("hide");
-  console.log("Hid reservation form, showed status box");
+  // reservationForm.classList.add("hide");
+  // reservationStatus.classList.remove("hide");
+  // console.log("Hid reservation form, showed status box");
 
-  buildReservationConfirmation();
+  // buildReservationConfirmation();
 }
 
 function buildReservationConfirmation() {
@@ -133,6 +141,7 @@ function buildReservationConfirmation() {
   $("#conf-check-out").innerHTML ="Check-out Date: " + reservation.checkOutDate;
   $("#conf-room-type").innerHTML = "Room type: " + reservedRoomType;
   $("#conf-number-of-rooms").innerHTML = "Number of Rooms: " + reservation.numberOfRooms;
+  $("#conf-additional-comments").innerHTML = "Additional Comments: " + reservation.additionalComments;
 
   console.log("Set value of reservation confirmation");
 

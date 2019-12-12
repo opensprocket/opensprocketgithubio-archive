@@ -201,7 +201,6 @@ footer {
   color: var(--link-text-highlight-color);
   text-decoration: underline dotted black;
   transition-duration: 0.4s;
-  padding: 1em;
 }
 .body-link:hover {
   background-color: #2664a0;

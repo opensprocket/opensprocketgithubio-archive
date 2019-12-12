@@ -35,11 +35,11 @@
           <h2>Reservations</h2>
           <p class="text-center">Please fill out all of the requested information to facilitate a fast reservation process. <br> If you have any questions or issues, please <a href="/temple-inn/pages/contact.html" alt="contact us" class="body-link">contact us</a>.</p>
           <div class="form">
-            <form class="grid grid-col-2 grid-col-2-gap" id="reservation-form" action="" method="">
+            <form class="grid grid-col-2 grid-col-2-gap" id="reservation-form" action="/temple-inn/pages/confirmation.html" method="">
               <div class="col1">
                 <fieldset>
                   <h3>Stay Information</h3>
-                  <label for="res-location">Location</label>
+                  <label for="res-location">Location*</label>
                   <select name="location" id="res-location" required>
                     <option value="Atlanta, GA">Atlanta, GA</option>
                     <option value="Dallas, TX">Dallas, TX</option>
@@ -47,13 +47,13 @@
                     <option value="Rexburg, ID">Rexburg, ID</option>
                   </select>
                   
-                  <label for="res-check-in-date">Check-in Date</label>
+                  <label for="res-check-in-date">Check-in Date*</label>
                   <input type="date" name="check-in-date" id="res-check-in-date" required>
                   
-                  <label for="res-check-out-date">Check-out Date</label>
+                  <label for="res-check-out-date">Check-out Date*</label>
                   <input type="date" name="check-out-date" id="res-check-out-date" required>
                   
-                  <label for="res-room-type">Room Type</label>
+                  <label for="res-room-type">Room Type*</label>
                   <select name="room-type" id="res-room-type" required>
                     <option value="bed1">One King Bed, Room</option>
                     <option value="bed2">Two Queen Bed, Room</option>
@@ -61,32 +61,35 @@
                     <option value="suite2">One King Bed, Kitchenette Suite</option>
                   </select>
   
-                  <label for="res-num-of-rooms">Number of Rooms</label>
+                  <label for="res-num-of-rooms">Number of Rooms*</label>
                   <input type="number" name="num-of-rooms" id="res-num-of-rooms" min="1" max="5" required>
+
+                  <label for="res-additional-comments">Additional Comments</label>
+                  <textarea name="additional-comments" id="res-additional-comments" cols="30" rows="10"></textarea>
                 </fieldset>
               </div>
               <div class="col2">
                 <fieldset>
                   <h3>Guest Information</h3>
-                  <label for="res-first-name">First Name</label>
+                  <label for="res-first-name">First Name*</label>
                   <input type="text" name="first-name" id="res-first-name" required>
 
-                  <label for="res-last-name">Last Name</label>
+                  <label for="res-last-name">Last Name*</label>
                   <input type="text" name="last-name" id="res-last-name" required>
 
-                  <label for="res-email-address">Email Address</label>
+                  <label for="res-email-address">Email Address*</label>
                   <input type="email" name="email-address" id="res-email-address" required>
 
-                  <label for="res-phone-number">Phone Number</label>
+                  <label for="res-phone-number">Phone Number*</label>
                   <input type="tel" name="phone-number" id="res-phone-number" required>
 
-                  <label for="res-country">Country</label>
+                  <label for="res-country">Country*</label>
                   <select name="country" id="res-country" required>
                     <!-- <option value="Canada">Canada</option> -->
                     <option value="United States">United States</option>
                   </select>
 
-                  <label for="res-state">State</label>
+                  <label for="res-state">State*</label>
                   <select name="state" id="res-state" required>
                     <option value="Alabama">Alabama</option>
                     <option value="Alaska">Alaska</option>
@@ -140,6 +143,7 @@
                     <option value="Wisconsin">Wisconsin</option>
                     <option value="Wyoming">Wyoming</option>
                   </select>
+                  <p>*Required fields</p>
                 </fieldset>
               </div>
               <button class="grid-span-2" type="submit" id="submit" onclick="processReservationData()">Submit Reservation</button>
@@ -147,33 +151,6 @@
             <br>
             <br>
           </div>
-      </section>
-      <section id="reservation-status" class="hide">
-        <h2>Reservations</h2>
-        <br>
-        <br>
-        <p class="center-text">Please be patient while we process your reservation information. A confirmation will be shown when complete.</p>
-        <br>
-        <br>
-      </section>
-      <section id="reservation-confirmation" class="hide">
-          <h2>Reservation Confirmation</h2>
-          <br>
-          <p>Please verify the information below for accuracy. If there are discrepancies, please <a href="/temple-inn/pages/contact.html" alt="contact us" class="body-link">contact us</a> as soon as possible to correct the errors. <br>
-          You should recieve a confirmation email within 24 hours.</p>
-          <ul>
-            <li id="conf-name"></li>
-            <li id="conf-email-address"></li>
-            <li id="conf-phone-number"></li>
-            <li id="conf-country-state"></li>
-            <li id="conf-location"></li>
-            <li id="conf-check-in"></li>
-            <li id="conf-check-out"></li>
-            <li id="conf-room-type"></li>
-            <li id="conf-number-of-rooms"></li>
-          </ul>
-          <br>
-          <br>
       </section>
     </main>
     <footer>

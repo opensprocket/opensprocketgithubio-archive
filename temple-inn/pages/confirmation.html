@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="C.L.R. Lee Nawta Sudonym">
+  <meta name="description" content="Homepage for the Temple Inn & Suites, which provides high quality hotel stays at an affordable price.">
+  <title id="page-title" data-currentpage="confirmation">Home | Temple Inn & Suites</title>
+  <link rel="stylesheet" href="/temple-inn/css/main.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/temple-inn/css/medium.css" media="screen and (min-width: 476px)" type="text/css">
+  <link rel="stylesheet" href="/temple-inn/css/large.css" media="screen and (min-width: 801px)" type="text/css">
+  <link rel="shortcut icon" href="/temple-inn/images/favicon.ico" type="image/x-icon">
+</head>
+<body >
+  <div class="main-container flex flex-col">
+    <header>
+      <img class="sitelogo" src="/temple-inn/images/logo.svg" alt="Logo for the Temple Inn & Suites">
+      <section>
+        <h1>Temple Inn & Suites</h1>
+        <span class="tagline"><em>Heavenly pillows, Heavenly prices!</em></span>
+      </section>
+    </header>
+    <nav id="page-nav">
+      <button id="menuBtn" onclick="toggleMobileNav()">&#9776; Menu</button>
+      <ul id="navigation" class="navigation">
+        <li><a href="/temple-inn/index.html">Home</a></li>
+        <li><a href="/temple-inn/pages/reservations.html">Reservations</a></li>
+        <li><a href="/temple-inn/pages/services.html">Services</a></li>
+        <li><a href="/temple-inn/pages/temples.html">Temples</a></li>
+        <li><a href="/temple-inn/pages/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section id="reservation-status" class="">
+        <h2>Reservations</h2>
+        <br>
+        <br>
+        <p class="text-center">Please be patient while we process your reservation information. A confirmation will be shown when complete.</p>
+        <br>
+        <br>
+      </section>
+      <section id="reservation-confirmation" class="hide">
+        <h2>Reservation Confirmation</h2>
+        <br>
+        <p>Please verify the information below for accuracy. If there are discrepancies, please <a href="/temple-inn/pages/contact.html" alt="contact us" class="body-link">contact us</a> as soon as possible to correct the errors. You should recieve a confirmation email within 24 hours.</p>
+        <p>Thank you for choosing to stay with Temple Inn & Suites!</p>
+        <ul>
+          <li id="conf-name"></li>
+          <li id="conf-email-address"></li>
+          <li id="conf-phone-number"></li>
+          <li id="conf-country-state"></li>
+          <li id="conf-location"></li>
+          <li id="conf-check-in"></li>
+          <li id="conf-check-out"></li>
+          <li id="conf-room-type"></li>
+          <li id="conf-number-of-rooms"></li>
+          <li id="conf-additional-comments"></li>
+        </ul>
+        <br>
+        <br>
+      </section>
+    </main>
+    <footer>
+      <section>
+        <br>
+        <span id="copyright-year"></span> | <span id="last-modified"></span>
+        <br><a href="/temple-inn/pages/attributions.html">Attributions</a> | <a href="/temple-inn/pages/contact.html">Contact Us</a>
+      </section>
+    </footer>
+    <script src="/temple-inn/js/functions.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      WebFont.load({google: {families: ["Alatsi","Oxygen"]}})
+    </script>
+  </div>
+</body>
+</html>
