@@ -30,17 +30,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
 });
 
-// enalbed for testing purposes
-// if (currentPage == "reservations") {
-//   $("#reservation-form").addEventListener('submit', function(event){event.preventDefault();});
-//   console.log("Added reservation form submission event listener");
-// }
-
-// if (currentPage == "confirmation") {
-//   console.log("You are now on the confirmation page.");
-//   window.onload = buildReservationConfirmation();
-// }
-
 // Functions
 
 function lastModified(){
