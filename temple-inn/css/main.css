@@ -153,6 +153,7 @@ details ul li {
 }
 
 iframe {
+  border: none;
   display: block;
   margin: 30px auto;
   align-items: center;
