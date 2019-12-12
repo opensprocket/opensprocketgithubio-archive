@@ -88,14 +88,6 @@ function processReservationData() {
   console.log(reservation);
 
   sesStor.setItem("reservation", JSON.stringify(reservation)); // store to session storage
-  // document.forms[0].reset; // reset form
-  // console.log("Reset form");
-
-  // reservationForm.classList.add("hide");
-  // reservationStatus.classList.remove("hide");
-  // console.log("Hid reservation form, showed status box");
-
-  // buildReservationConfirmation();
 }
 
 function buildReservationConfirmation() {
