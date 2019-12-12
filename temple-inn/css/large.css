@@ -1,3 +1,4 @@
 @media only screen and (min-width:801px) {
-  /* unused at this time */
+  .banner a { margin-right: 5em;}
+  .banner p {margin-left: 5em;}
 }
