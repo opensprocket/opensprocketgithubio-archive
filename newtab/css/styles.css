@@ -1,0 +1,11 @@
+@import "/css/normalize.css";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+#wrapper {
+  min-width: 300px;
+  max-width: ;
+}
