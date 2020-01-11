@@ -26,6 +26,9 @@ h1,h2,h3,h4,h5,h6 {
   position: relative;
 }
 
+.grid {display:grid;}
+.flex {display:flex;}
+
 #wrapper {
   min-width: 300px;
   /* max-width: 720px; */

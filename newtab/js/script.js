@@ -11,9 +11,8 @@ document.addEventListener("DOMContentLoaded", function(){
   //Functions to run
   buildLastModified("#last-modified");
   buildCopyrightDate("#copyright-year");
-  getCurrentDate();
-  getCurrentDate();
-
+  buildCurrentDate();
+  buildCurrentTime();
 })
 
 function buildLastModified(containerId) {
@@ -34,10 +33,15 @@ function buildCopyrightDate(containerId) {
   container.innerHTML = copyOutput;
 }
 
-function getCurrentDate() {
-    
+function buildCurrentDate() {
+  const currDate = new Date();
+  const longMonthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  let monthName = longMonthNames[currDate.getMonth()];
+  var formattedDate = monthName + " " + currDate.getDate() + ", " + currDate.getFullYear();
+  $("#current-date").innerHTML = formattedDate;
+  console.log(formattedDate);
 }
 
-function getCurrentTime() {
+function buildCurrentTime() {
     
 }
