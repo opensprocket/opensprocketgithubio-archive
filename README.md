@@ -1,4 +1,4 @@
 # opensprocket.github.io
-Homepage for portfolio
+Homepage for CIT235 Portfolio
 
-https://opensprocket.github.io
+https://opensprocket.github.io/opensprocketgithubio-archive
